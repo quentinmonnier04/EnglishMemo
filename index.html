@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="manifest" href"theme-color" content="#22d3ee">
+
+
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>English Memo</title>
+
+    <style>
+
+        :root {
+            --background: #020617;
+            --panel: #0f172a;
+            --panel-light: #111c31;
+            --border: #26334a;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --cyan: #22d3ee;
+            --green: #34d399;
+            --red: #fb7185;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+
+            min-height: 100vh;
+
+            color: var(--text);
+
+            font-family:
+                "Segoe UI",
+                system-ui,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #10213b 0,
+                    var(--background) 48%
+                );
+        }
+
+        button,
+        input,
+        select {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .application {
+            width: min(
+                800px,
+                calc(100% - 28px)
+            );
+
+            margin: auto;
+
+            padding:
+                30px
+                0
+                50px;
+        }
+
+        header {
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                flex-end;
+
+            gap: 16px;
+
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            margin:
+                0
+                0
+                7px;
+
+            color: var(--cyan);
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                0.16em;
+
+            font-size:
+                0.78rem;
+
+            font-weight:
+                800;
+        }
+
+        h1 {
+            margin: 0;
+
+            font-size:
+                clamp(
+                    2rem,
+                    6vw,
+                    3rem
+                );
+        }
+
+        .toolbar {
+            display: flex;
+
+            gap: 9px;
+
+            flex-wrap: wrap;
+        }
+
+        button,
+        select {
+            padding:
+                11px
+                14px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                14px;
+
+            background:
+                var(--panel);
+
+            color:
+                var(--text);
+
+            font-weight:
+                700;
+        }
+
+        button:hover {
+            filter:
+                brightness(1.12);
+        }
+
+        .primary-button {
+            background:
+                var(--cyan);
+
+            border-color:
+                var(--cyan);
+
+            color:
+                #06202a;
+        }
+
+        .source {
+            margin:
+                0
+                0
+                15px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                0.82rem;
+        }
+
+        .statistics {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    1fr
+                );
+
+            gap: 10px;
+
+            margin-bottom:
+                12px;
+        }
+
+        .statistic {
+            padding: 11px;
+
+            border:
+                1px solid
+                #18243a;
+
+            border-radius:
+                16px;
+
+            background:
+                rgba(
+                    15,
+                    23,
+                    42,
+                    0.94
+                );
+
+            text-align:
+                center;
+        }
+
+        .statistic-label {
+            color:
+                var(--muted);
+
+            font-size:
+                0.75rem;
+        }
+
+        .statistic-value {
+            margin-top:
+                3px;
+
+            font-size:
+                1.25rem;
+
+            font-weight:
+                850;
+        }
+
+        #score {
+            color:
+                var(--green);
+        }
+
+        #errors {
+            color:
+                var(--red);
+        }
+
+        .progress {
+            height: 8px;
+
+            overflow:
+                hidden;
+
+            margin-bottom:
+                18px;
+
+            border-radius:
+                999px;
+
+            background:
+                #1e293b;
+        }
+
+        #progressBar {
+            width: 0;
+
+            height:
+                100%;
+
+            background:
+                var(--cyan);
+
+            transition:
+                width
+                0.25s;
+        }
+
+        .card {
+            min-height:
+                410px;
+
+            display: flex;
+
+            flex-direction:
+                column;
+
+            justify-content:
+                center;
+
+            padding:
+                clamp(
+                    25px,
+                    6vw,
+                    46px
+                );
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--panel-light),
+                    #080f1d
+                );
+
+            box-shadow:
+                0
+                28px
+                70px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.4
+                );
+        }
+
+        .instruction {
+            text-align:
+                center;
+
+            color:
+                var(--muted);
+
+            font-size:
+                0.8rem;
+
+            font-weight:
+                800;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                0.12em;
+        }
+
+        #word {
+            margin:
+                15px
+                0
+                8px;
+
+            text-align:
+                center;
+
+            font-size:
+                clamp(
+                    2.2rem,
+                    8vw,
+                    4rem
+                );
+
+            line-height:
+                1.08;
+        }
+
+        #category {
+            margin:
+                0
+                0
+                34px;
+
+            color:
+                var(--cyan);
+
+            text-align:
+                center;
+        }
+
+        #answer {
+            width: 100%;
+
+            height: 58px;
+
+            padding:
+                0
+                15px;
+
+            border:
+                2px solid
+                var(--border);
+
+            border-radius:
+                16px;
+
+            outline:
+                none;
+
+            background:
+                #030a16;
+
+            color:
+                white;
+
+            text-align:
+                center;
+
+            font-size:
+                1.14rem;
+        }
+
+        #answer:focus {
+            border-color:
+                var(--cyan);
+
+            box-shadow:
+                0
+                0
+                0
+                4px
+                rgba(
+                    34,
+                    211,
+                    238,
+                    0.09
+                );
+        }
+
+        #validateButton {
+            width:
+                100%;
+
+            height:
+                50px;
+
+            margin-top:
+                11px;
+        }
+
+        #nextButton {
+            width:
+                100%;
+
+            margin-top:
+                11px;
+
+            background:
+                white;
+
+            color:
+                #0f172a;
+        }
+
+        .feedback {
+            display:
+                none;
+
+            margin-top:
+                12px;
+
+            padding:
+                14px;
+
+            border-radius:
+                15px;
+
+            font-weight:
+                800;
+
+            text-align:
+                center;
+        }
+
+        .feedback.correct {
+            display:
+                block;
+
+            color:
+                var(--green);
+
+            background:
+                rgba(
+                    52,
+                    211,
+                    153,
+                    0.1
+                );
+        }
+
+        .feedback.incorrect {
+            display:
+                block;
+
+            color:
+                var(--red);
+
+            background:
+                rgba(
+                    251,
+                    113,
+                    133,
+                    0.1
+                );
+        }
+
+        .hidden {
+            display:
+                none !important;
+        }
+
+        .finish {
+            text-align:
+                center;
+        }
+
+        .trophy {
+            font-size:
+                4rem;
+        }
+
+        .finish-actions {
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            flex-wrap:
+                wrap;
+
+            gap: 10px;
+
+            margin-top:
+                22px;
+        }
+
+        .error-box {
+            padding:
+                18px;
+
+            border:
+                1px solid
+                var(--red);
+
+            border-radius:
+                18px;
+
+            background:
+                #451a1a;
+
+            color:
+                #fecdd3;
+        }
+
+        footer {
+            margin-top:
+                15px;
+
+            color:
+                #64748b;
+
+            text-align:
+                center;
+
+            font-size:
+                0.78rem;
+        }
+
+        @media (
+            max-width:
+            650px
+        ) {
+
+            header {
+                align-items:
+                    stretch;
+
+                flex-direction:
+                    column;
+            }
+
+            .toolbar > * {
+                flex: 1;
+            }
+
+            .card {
+                min-height:
+                    380px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main class="application">
+
+        <header>
+
+            <div>
+
+                <p class="subtitle">
+                    English Memo
+                </p>
+
+                <h1>
+                    Trouve le bon mot
+                </h1>
+
+            </div>
+
+            <div class="toolbar">
+
+                <button id="directionButton">
+                    Français → Anglais
+                </button>
+
+                <select id="categoryFilter">
+
+                    <option value="Toutes">
+                        Toutes les catégories
+                    </option>
+
+                </select>
+
+                <button
+                    id="reloadButton"
+                    class="primary-button"
+                >
+                    ↻ Relire Excel
+                </button>
+
+            </div>
+
+        </header>
+
+        <p
+            id="source"
+            class="source"
+        >
+            Chargement du fichier Excel...
+        </p>
+
+        <section class="statistics">
+
+            <div class="statistic">
+
+                <div class="statistic-label">
+                    Carte
+                </div>
+
+                <div
+                    id="counter"
+                    class="statistic-value"
+                >
+                    0 / 0
+                </div>
+
+            </div>
+
+            <div class="statistic">
+
+                <div class="statistic-label">
+                    Score
+                </div>
+
+                <div
+                    id="score"
+                    class="statistic-value"
+                >
+                    0
+                </div>
+
+            </div>
+
+            <div class="statistic">
+
+                <div class="statistic-label">
+                    Erreurs
+                </div>
+
+                <div
+                    id="errors"
+                    class="statistic-value"
+                >
+                    0
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="progress">
+
+            <div id="progressBar"></div>
+
+        </div>
+
+        <section class="card">
+
+            <div id="loadingArea">
+                Chargement du vocabulaire...
+            </div>
+
+            <div
+                id="errorArea"
+                class="error-box hidden"
+            ></div>
+
+            <div
+                id="gameArea"
+                class="hidden"
+            >
+
+                <div
+                    id="instruction"
+                    class="instruction"
+                >
+                    Traduis en anglais
+                </div>
+
+                <h2 id="word"></h2>
+
+                <p id="category"></p>
+
+                <form id="answerForm">
+
+                    <input
+                        id="answer"
+                        autocomplete="off"
+                        placeholder="Écris ta réponse ici..."
+                    >
+
+                    <button
+                        id="validateButton"
+                        class="primary-button"
+                        type="submit"
+                    >
+                        Valider
+                    </button>
+
+                </form>
+
+                <div
+                    id="feedback"
+                    class="feedback"
+                ></div>
+
+                <button
+                    id="nextButton"
+                    class="hidden"
+                >
+                    Carte suivante →
+                </button>
+
+            </div>
+
+            <div
+                id="finishArea"
+                class="finish hidden"
+            >
+
+                <div class="trophy">
+                    🏆
+                </div>
+
+                <h2>
+                    Partie terminée
+                </h2>
+
+                <p id="finalScore"></p>
+
+                <div class="finish-actions">
+
+                    <button
+                        id="restartButton"
+                        class="primary-button"
+                    >
+                        Rejouer
+                    </button>
+
+                    <button
+                        id="retryButton"
+                        class="hidden"
+                    >
+                        Revoir mes erreurs
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            Modifie vocabulaire.xlsx, enregistre-le,
+            puis clique sur « Relire Excel ».
+        </footer>
+
+    </main>
+
+
+    <script>
+
+        let allWords = [];
+
+        let deck = [];
+
+        let mistakes = [];
+
+        let currentIndex = 0;
+
+        let score = 0;
+
+        let direction = "fr-en";
+
+        let answered = false;
+
+        function normalize(text) {
+
+    if (!text) {
+        return "";
+    }
+
+    return String(text)
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        )
+        .trim()
+        .replace(
+            /\s+/g,
+            " "
+        );
+
+}
+
+   
+
+
+        function getElement(id) {
+
+            return document.getElementById(id);
+
+        }
+
+
+        function shuffle(array) {
+
+            return array
+                .map(
+                    value => ({
+                        value: value,
+                        random: Math.random()
+                    })
+                )
+                .sort(
+                    (first, second) =>
+                        first.random
+                        - second.random
+                )
+                .map(
+                    item => item.value
+                );
+
+        }
+
+
+        function escapeHtml(text) {
+
+            const element =
+                document.createElement("div");
+
+            element.textContent = text;
+
+            return element.innerHTML;
+
+        }
+
+
+        async function loadExcel() {
+
+    try {
+
+        const response =
+            await fetch(
+                "vocabulaire.json?time="
+                + Date.now()
+            );
+
+        const words =
+            await response.json();
+
+        allWords = words;
+
+        document
+            .getElementById("source")
+            .textContent =
+            words.length
+            + " mots chargés";
+
+        fillCategories();
+
+        startGame();
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        alert(
+            "Impossible de charger vocabulaire.json"
+        );
+
+    }
+
+}
+
+
+        function fillCategories() {
+
+            const categoryFilter =
+                getElement(
+                    "categoryFilter"
+                );
+
+            const selectedCategory =
+                categoryFilter.value;
+
+            const categories = [
+                ...new Set(
+                    allWords.map(
+                        word =>
+                            word.category
+                    )
+                )
+            ].sort();
+
+            categoryFilter.innerHTML =
+                '<option value="Toutes">'
+                + 'Toutes les catégories'
+                + '</option>'
+                + categories
+                    .map(
+                        category =>
+                            '<option value="'
+                            + escapeHtml(category)
+                            + '">'
+                            + escapeHtml(category)
+                            + '</option>'
+                    )
+                    .join("");
+
+            if (
+                categories.includes(
+                    selectedCategory
+                )
+            ) {
+
+                categoryFilter.value =
+                    selectedCategory;
+
+            }
+
+        }
+
+
+        function startGame(
+            customDeck = null
+        ) {
+
+            const selectedCategory =
+                getElement(
+                    "categoryFilter"
+                ).value;
+
+            let sourceWords;
+
+            if (customDeck) {
+
+                sourceWords =
+                    customDeck;
+
+            } else if (
+                selectedCategory
+                === "Toutes"
+            ) {
+
+                sourceWords =
+                    allWords;
+
+            } else {
+
+                sourceWords =
+                    allWords.filter(
+                        word =>
+                            word.category
+                            === selectedCategory
+                    );
+
+            }
+
+            deck =
+                shuffle(
+                    [...sourceWords]
+                );
+
+            currentIndex = 0;
+
+            score = 0;
+
+            mistakes = [];
+
+            answered = false;
+
+            getElement(
+                "loadingArea"
+            ).classList.add(
+                "hidden"
+            );
+
+            getElement(
+                "finishArea"
+            ).classList.add(
+                "hidden"
+            );
+
+            getElement(
+                "gameArea"
+            ).classList.remove(
+                "hidden"
+            );
+
+            renderCard();
+
+        }
+
+
+        function renderCard() {
+
+            if (!deck.length) {
+
+                getElement(
+                    "word"
+                ).textContent =
+                    "Aucun mot dans cette catégorie";
+
+                getElement(
+                    "answer"
+                ).disabled =
+                    true;
+
+                return;
+
+            }
+
+            const current =
+                deck[currentIndex];
+
+            let displayedWord;
+
+            if (
+                direction
+                === "fr-en"
+            ) {
+
+                displayedWord =
+                    current.french;
+
+                getElement(
+                    "instruction"
+                ).textContent =
+                    "Traduis en anglais";
+
+            } else {
+
+                displayedWord =
+                    current.english;
+
+                getElement(
+                    "instruction"
+                ).textContent =
+                    "Traduis en français";
+
+            }
+
+            getElement(
+                "word"
+            ).textContent =
+                displayedWord;
+
+            getElement(
+                "category"
+            ).textContent =
+                current.category;
+
+            const answerInput =
+                getElement(
+                    "answer"
+                );
+
+            answerInput.value =
+                "";
+
+            answerInput.disabled =
+                false;
+
+            answerInput.focus();
+
+            const feedback =
+                getElement(
+                    "feedback"
+                );
+
+            feedback.className =
+                "feedback";
+
+            feedback.textContent =
+                "";
+
+            getElement(
+                "validateButton"
+            ).classList.remove(
+                "hidden"
+            );
+
+            getElement(
+                "nextButton"
+            ).classList.add(
+                "hidden"
+            );
+
+            getElement(
+                "counter"
+            ).textContent =
+                (currentIndex + 1)
+                + " / "
+                + deck.length;
+
+            getElement(
+                "score"
+            ).textContent =
+                score;
+
+            getElement(
+                "errors"
+            ).textContent =
+                mistakes.length;
+
+            getElement(
+                "progressBar"
+            ).style.width =
+                (
+                    currentIndex
+                    / deck.length
+                    * 100
+                )
+                + "%";
+
+            answered = false;
+
+        }
+
+
+        async function checkAnswer(
+            event
+        ) {
+
+            event.preventDefault();
+
+            const answer =
+                getElement(
+                    "answer"
+                ).value;
+
+            if (
+                answered
+                || !answer.trim()
+                || !deck.length
+            ) {
+
+                return;
+
+            }
+
+            const current =
+                deck[currentIndex];
+
+            let expectedAnswers;
+
+            if (
+                direction
+                === "fr-en"
+            ) {
+
+                expectedAnswers =
+                    current.english_answers;
+
+            } else {
+
+                expectedAnswers =
+                    current.french_answers;
+
+            }
+
+            const result = {
+
+    correct:
+        expectedAnswers.some(
+            value =>
+                normalize(value)
+                === normalize(answer)
+        )
+
+};
+
+
+            answered = true;
+
+            getElement(
+                "answer"
+            ).disabled =
+                true;
+
+            getElement(
+                "validateButton"
+            ).classList.add(
+                "hidden"
+            );
+
+            getElement(
+                "nextButton"
+            ).classList.remove(
+                "hidden"
+            );
+
+            const feedback =
+                getElement(
+                    "feedback"
+                );
+
+            if (result.correct) {
+
+                score += 1;
+
+                feedback.className =
+                    "feedback correct";
+
+                feedback.textContent =
+                    "✓ Bonne réponse !";
+
+            } else {
+
+                mistakes.push(
+                    current
+                );
+
+                feedback.className =
+                    "feedback incorrect";
+
+                feedback.textContent =
+                    "✕ Réponses acceptées : "
+                    + expectedAnswers.join(
+                        " ou "
+                    );
+
+            }
+
+            getElement(
+                "score"
+            ).textContent =
+                score;
+
+            getElement(
+                "errors"
+            ).textContent =
+                mistakes.length;
+
+            getElement(
+                "progressBar"
+            ).style.width =
+                (
+                    (
+                        currentIndex
+                        + 1
+                    )
+                    / deck.length
+                    * 100
+                )
+                + "%";
+
+        }
+
+
+        function nextCard() {
+
+            if (
+                currentIndex
+                >= deck.length - 1
+            ) {
+
+                finishGame();
+
+                return;
+
+            }
+
+            currentIndex += 1;
+
+            renderCard();
+
+        }
+
+
+        function finishGame() {
+
+            getElement(
+                "gameArea"
+            ).classList.add(
+                "hidden"
+            );
+
+            getElement(
+                "finishArea"
+            ).classList.remove(
+                "hidden"
+            );
+
+            const wordLabel =
+                score > 1
+                ? "mots"
+                : "mot";
+
+            getElement(
+                "finalScore"
+            ).innerHTML =
+                "Tu as trouvé <strong>"
+                + score
+                + "</strong> "
+                + wordLabel
+                + " sur <strong>"
+                + deck.length
+                + "</strong>.";
+
+            getElement(
+                "retryButton"
+            ).classList.toggle(
+                "hidden",
+                mistakes.length === 0
+            );
+
+            getElement(
+                "progressBar"
+            ).style.width =
+                "100%";
+
+        }
+
+
+        getElement(
+            "answerForm"
+        ).addEventListener(
+            "submit",
+            checkAnswer
+        );
+
+
+        getElement(
+            "nextButton"
+        ).addEventListener(
+            "click",
+            nextCard
+        );
+
+
+        getElement(
+            "reloadButton"
+        ).addEventListener(
+            "click",
+            loadExcel
+        );
+
+
+        getElement(
+            "restartButton"
+        ).addEventListener(
+            "click",
+            function () {
+
+                startGame();
+
+            }
+        );
+
+
+        getElement(
+            "retryButton"
+        ).addEventListener(
+            "click",
+            function () {
+
+                const uniqueMistakes = [
+                    ...new Map(
+                        mistakes.map(
+                            word => [
+                                word.id,
+                                word
+                            ]
+                        )
+                    ).values()
+                ];
+
+                startGame(
+                    uniqueMistakes
+                );
+
+            }
+        );
+
+
+        getElement(
+            "directionButton"
+        ).addEventListener(
+            "click",
+            function () {
+
+                if (
+                    direction
+                    === "fr-en"
+                ) {
+
+                    direction =
+                        "en-fr";
+
+                    this.textContent =
+                        "Anglais → Français";
+
+                } else {
+
+                    direction =
+                        "fr-en";
+
+                    this.textContent =
+                        "Français → Anglais";
+
+                }
+
+                startGame();
+
+            }
+        );
+
+
+        getElement(
+            "categoryFilter"
+        ).addEventListener(
+            "change",
+            function () {
+
+                startGame();
+
+            }
+        );
+
+        document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key !== "Enter") {
+            return;
+        }
+
+        event.preventDefault();
+
+        // Si la question est déjà validée
+        if (answered) {
+
+            if (
+                !document
+                    .getElementById("nextButton")
+                    .classList.contains("hidden")
+            ) {
+                nextCard();
+            }
+
+            return;
+        }
+
+        // Sinon valide la réponse
+        document
+            .getElementById("answerForm")
+            .requestSubmit();
+
+    }
+);
+
+        if ("serviceWorker" in navigator) {
+
+    navigator.serviceWorker
+        .register("./service-worker.js")
+        .catch(error => {
+            console.error(error);
+        });
+
+}
+
+        loadExcel();
+
+    </script>
+
+</body>
+
+</html>

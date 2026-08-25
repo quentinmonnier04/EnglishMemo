@@ -1,0 +1,2963 @@
+[
+    {
+        "french": "de plus",
+        "english": "moreover",
+        "french_answers": [
+            "de plus"
+        ],
+        "english_answers": [
+            "moreover"
+        ],
+        "category": "Addition"
+    },
+    {
+        "french": "en outre, par ailleurs",
+        "english": "furthermore",
+        "french_answers": [
+            "en outre, par ailleurs"
+        ],
+        "english_answers": [
+            "furthermore"
+        ],
+        "category": "Addition"
+    },
+    {
+        "french": "d'ailleurs, en plus de",
+        "english": "besides",
+        "french_answers": [
+            "d'ailleurs, en plus de"
+        ],
+        "english_answers": [
+            "besides"
+        ],
+        "category": "Addition"
+    },
+    {
+        "french": "en plus de",
+        "english": "in addition",
+        "french_answers": [
+            "en plus de"
+        ],
+        "english_answers": [
+            "in addition"
+        ],
+        "category": "Addition"
+    },
+    {
+        "french": "aussi, de même",
+        "english": "also",
+        "french_answers": [
+            "aussi, de même"
+        ],
+        "english_answers": [
+            "also"
+        ],
+        "category": "Addition"
+    },
+    {
+        "french": "ainsi que",
+        "english": "as well as",
+        "french_answers": [
+            "ainsi que"
+        ],
+        "english_answers": [
+            "as well as"
+        ],
+        "category": "Addition"
+    },
+    {
+        "french": "aussi, de même",
+        "english": "too",
+        "french_answers": [
+            "aussi, de même"
+        ],
+        "english_answers": [
+            "too"
+        ],
+        "category": "Addition"
+    },
+    {
+        "french": "mais",
+        "english": "but",
+        "french_answers": [
+            "mais"
+        ],
+        "english_answers": [
+            "but"
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "au lieu de / à la place",
+        "english": "instead of",
+        "french_answers": [
+            "au lieu de / à la place"
+        ],
+        "english_answers": [
+            "instead of"
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "d'une part",
+        "english": "on the one hand",
+        "french_answers": [
+            "d'une part"
+        ],
+        "english_answers": [
+            "on the one hand"
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "d'autre part, en revanche",
+        "english": "on the other hand",
+        "french_answers": [
+            "d'autre part, en revanche"
+        ],
+        "english_answers": [
+            "on the other hand"
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "cependant, pourtant",
+        "english": "however",
+        "french_answers": [
+            "cependant, pourtant"
+        ],
+        "english_answers": [
+            "however"
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "néanmoins",
+        "english": "nevertheless",
+        "french_answers": [
+            "néanmoins",
+            "toutefois"
+        ],
+        "english_answers": [
+            "nevertheless",
+            "nonetheless"
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "cependant",
+        "english": "yet",
+        "french_answers": [
+            "cependant"
+        ],
+        "english_answers": [
+            "yet"
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "au contraire",
+        "english": "on the contrary",
+        "french_answers": [
+            "au contraire"
+        ],
+        "english_answers": [
+            "on the contrary"
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "soit... soit...",
+        "english": "either... or...",
+        "french_answers": [
+            "soit... soit..."
+        ],
+        "english_answers": [
+            "either... or..."
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "malgré",
+        "english": "in spite of",
+        "french_answers": [
+            "malgré"
+        ],
+        "english_answers": [
+            "in spite of",
+            "despite"
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "bien que",
+        "english": "although",
+        "french_answers": [
+            "bien que"
+        ],
+        "english_answers": [
+            "although",
+            "even though"
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "ni...ni...",
+        "english": "neither... nor...",
+        "french_answers": [
+            "ni...ni..."
+        ],
+        "english_answers": [
+            "neither... nor..."
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "cependant / malgré cela",
+        "english": "still",
+        "french_answers": [
+            "cependant / malgré cela"
+        ],
+        "english_answers": [
+            "still"
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "tandis que",
+        "english": "whereas",
+        "french_answers": [
+            "tandis que"
+        ],
+        "english_answers": [
+            "whereas"
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "tandis que",
+        "english": "while",
+        "french_answers": [
+            "tandis que"
+        ],
+        "english_answers": [
+            "while"
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "autrement",
+        "english": "otherwise",
+        "french_answers": [
+            "autrement",
+            "sinon"
+        ],
+        "english_answers": [
+            "otherwise"
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "à la difference de",
+        "english": "unlike",
+        "french_answers": [
+            "à la difference de",
+            "contrairement à..."
+        ],
+        "english_answers": [
+            "unlike"
+        ],
+        "category": "Contraste - Opposition"
+    },
+    {
+        "french": "parce que",
+        "english": "as",
+        "french_answers": [
+            "parce que"
+        ],
+        "english_answers": [
+            "as"
+        ],
+        "category": "Cause"
+    },
+    {
+        "french": "dû à",
+        "english": "due to",
+        "french_answers": [
+            "dû à"
+        ],
+        "english_answers": [
+            "due to"
+        ],
+        "category": "Cause"
+    },
+    {
+        "french": "en raison de",
+        "english": "owing to",
+        "french_answers": [
+            "en raison de"
+        ],
+        "english_answers": [
+            "owing to"
+        ],
+        "category": "Cause"
+    },
+    {
+        "french": "à cause de",
+        "english": "because of",
+        "french_answers": [
+            "à cause de"
+        ],
+        "english_answers": [
+            "because of"
+        ],
+        "category": "Cause"
+    },
+    {
+        "french": "puisque",
+        "english": "since",
+        "french_answers": [
+            "puisque"
+        ],
+        "english_answers": [
+            "since"
+        ],
+        "category": "Cause"
+    },
+    {
+        "french": "grâce à",
+        "english": "thanks to",
+        "french_answers": [
+            "grâce à"
+        ],
+        "english_answers": [
+            "thanks to"
+        ],
+        "category": "Cause"
+    },
+    {
+        "french": "tant que",
+        "english": "as long as",
+        "french_answers": [
+            "tant que"
+        ],
+        "english_answers": [
+            "as long as"
+        ],
+        "category": "Condition"
+    },
+    {
+        "french": "même si",
+        "english": "even if",
+        "french_answers": [
+            "même si"
+        ],
+        "english_answers": [
+            "even if"
+        ],
+        "category": "Condition"
+    },
+    {
+        "french": "au cas où...",
+        "english": "(just) in case...",
+        "french_answers": [
+            "au cas où..."
+        ],
+        "english_answers": [
+            "(just) in case..."
+        ],
+        "category": "Condition"
+    },
+    {
+        "french": "dans le cas de",
+        "english": "in the event of...",
+        "french_answers": [
+            "dans le cas de"
+        ],
+        "english_answers": [
+            "in the event of..."
+        ],
+        "category": "Condition"
+    },
+    {
+        "french": "à moins que",
+        "english": "unless",
+        "french_answers": [
+            "à moins que"
+        ],
+        "english_answers": [
+            "unless"
+        ],
+        "category": "Condition"
+    },
+    {
+        "french": "si (oui ou non)",
+        "english": "whether",
+        "french_answers": [
+            "si (oui ou non)"
+        ],
+        "english_answers": [
+            "whether"
+        ],
+        "category": "Condition"
+    },
+    {
+        "french": "à condition",
+        "english": "on condition that",
+        "french_answers": [
+            "à condition"
+        ],
+        "english_answers": [
+            "on condition that"
+        ],
+        "category": "Condition"
+    },
+    {
+        "french": "pourvu que",
+        "english": "provided",
+        "french_answers": [
+            "pourvu que"
+        ],
+        "english_answers": [
+            "provided",
+            "providing (that)"
+        ],
+        "category": "Condition"
+    },
+    {
+        "french": "en comparaison",
+        "english": "in comparison (with)",
+        "french_answers": [
+            "en comparaison"
+        ],
+        "english_answers": [
+            "in comparison (with)"
+        ],
+        "category": "Comparaison"
+    },
+    {
+        "french": "de même",
+        "english": "similarly",
+        "french_answers": [
+            "de même",
+            "parallèlement"
+        ],
+        "english_answers": [
+            "similarly"
+        ],
+        "category": "Comparaison"
+    },
+    {
+        "french": "également",
+        "english": "likewise",
+        "french_answers": [
+            "également",
+            "de même"
+        ],
+        "english_answers": [
+            "likewise"
+        ],
+        "category": "Comparaison"
+    },
+    {
+        "french": "à bien des égards",
+        "english": "in many ways",
+        "french_answers": [
+            "à bien des égards"
+        ],
+        "english_answers": [
+            "in many ways"
+        ],
+        "category": "Degré"
+    },
+    {
+        "french": "à certains égards",
+        "english": "in some respects",
+        "french_answers": [
+            "à certains égards"
+        ],
+        "english_answers": [
+            "in some respects"
+        ],
+        "category": "Degré"
+    },
+    {
+        "french": "d'une façon ou une autre",
+        "english": "one way or another",
+        "french_answers": [
+            "d'une façon ou une autre"
+        ],
+        "english_answers": [
+            "one way or another"
+        ],
+        "category": "Degré"
+    },
+    {
+        "french": "dans une certaine mesure",
+        "english": "to some extent",
+        "french_answers": [
+            "dans une certaine mesure"
+        ],
+        "english_answers": [
+            "to some extent"
+        ],
+        "category": "Degré"
+    },
+    {
+        "french": "en grande partie",
+        "english": "to a large extent",
+        "french_answers": [
+            "en grande partie"
+        ],
+        "english_answers": [
+            "to a large extent"
+        ],
+        "category": "Degré"
+    },
+    {
+        "french": "ainsi",
+        "english": "thus",
+        "french_answers": [
+            "ainsi",
+            "donc"
+        ],
+        "english_answers": [
+            "thus"
+        ],
+        "category": "Degré"
+    },
+    {
+        "french": "d'une certaine façon",
+        "english": "somehow",
+        "french_answers": [
+            "d'une certaine façon",
+            "d'une façon ou une autre"
+        ],
+        "english_answers": [
+            "somehow"
+        ],
+        "category": "Degré"
+    },
+    {
+        "french": "en ce sens que",
+        "english": "insofar as",
+        "french_answers": [
+            "en ce sens que"
+        ],
+        "english_answers": [
+            "insofar as"
+        ],
+        "category": "Précision"
+    },
+    {
+        "french": "c'est à dire",
+        "english": "i.e. (id est)",
+        "french_answers": [
+            "c'est à dire"
+        ],
+        "english_answers": [
+            "i.e. (id est)",
+            "that is to say"
+        ],
+        "category": "Précision"
+    },
+    {
+        "french": "à savoir",
+        "english": "namely",
+        "french_answers": [
+            "à savoir"
+        ],
+        "english_answers": [
+            "namely"
+        ],
+        "category": "Précision"
+    },
+    {
+        "french": "par exemple",
+        "english": "e.g. (exempli gratia)",
+        "french_answers": [
+            "par exemple"
+        ],
+        "english_answers": [
+            "e.g. (exempli gratia)",
+            "for example"
+        ],
+        "category": "Précision"
+    },
+    {
+        "french": "afin que",
+        "english": "in order that",
+        "french_answers": [
+            "afin que"
+        ],
+        "english_answers": [
+            "in order that"
+        ],
+        "category": "But"
+    },
+    {
+        "french": "afin de",
+        "english": "(in order) to",
+        "french_answers": [
+            "afin de"
+        ],
+        "english_answers": [
+            "(in order) to"
+        ],
+        "category": "But"
+    },
+    {
+        "french": "de telle façon à",
+        "english": "in such a way as to",
+        "french_answers": [
+            "de telle façon à"
+        ],
+        "english_answers": [
+            "in such a way as to"
+        ],
+        "category": "But"
+    },
+    {
+        "french": "afin de",
+        "english": "so as to",
+        "french_answers": [
+            "afin de"
+        ],
+        "english_answers": [
+            "so as to"
+        ],
+        "category": "But"
+    },
+    {
+        "french": "en lieu de",
+        "english": "by way of",
+        "french_answers": [
+            "en lieu de"
+        ],
+        "english_answers": [
+            "by way of"
+        ],
+        "category": "But"
+    },
+    {
+        "french": "de sorte que",
+        "english": "so that",
+        "french_answers": [
+            "de sorte que"
+        ],
+        "english_answers": [
+            "so that"
+        ],
+        "category": "But"
+    },
+    {
+        "french": "par conséquent",
+        "english": "as a result",
+        "french_answers": [
+            "par conséquent"
+        ],
+        "english_answers": [
+            "as a result"
+        ],
+        "category": "Résultat"
+    },
+    {
+        "french": "par conséquent",
+        "english": "consequently",
+        "french_answers": [
+            "par conséquent"
+        ],
+        "english_answers": [
+            "consequently"
+        ],
+        "category": "Résultat"
+    },
+    {
+        "french": "ainsi",
+        "english": "so",
+        "french_answers": [
+            "ainsi",
+            "donc"
+        ],
+        "english_answers": [
+            "so"
+        ],
+        "category": "Résultat"
+    },
+    {
+        "french": "puis",
+        "english": "then",
+        "french_answers": [
+            "puis"
+        ],
+        "english_answers": [
+            "then"
+        ],
+        "category": "Résultat"
+    },
+    {
+        "french": "par conséquent",
+        "english": "therefore",
+        "french_answers": [
+            "par conséquent",
+            "donc"
+        ],
+        "english_answers": [
+            "therefore"
+        ],
+        "category": "Résultat"
+    },
+    {
+        "french": "ainsi",
+        "english": "thus",
+        "french_answers": [
+            "ainsi",
+            "donc"
+        ],
+        "english_answers": [
+            "thus"
+        ],
+        "category": "Résultat"
+    },
+    {
+        "french": "d'où",
+        "english": "hence",
+        "french_answers": [
+            "d'où"
+        ],
+        "english_answers": [
+            "hence"
+        ],
+        "category": "Résultat"
+    },
+    {
+        "french": "en conséquence",
+        "english": "accordingly",
+        "french_answers": [
+            "en conséquence"
+        ],
+        "english_answers": [
+            "accordingly"
+        ],
+        "category": "Résultat"
+    },
+    {
+        "french": "par exemple",
+        "english": "e.g. (exempli gratia = for example)",
+        "french_answers": [
+            "par exemple"
+        ],
+        "english_answers": [
+            "e.g. (exempli gratia = for example)"
+        ],
+        "category": "Exemple"
+    },
+    {
+        "french": "comme",
+        "english": "such as",
+        "french_answers": [
+            "comme",
+            "tel que"
+        ],
+        "english_answers": [
+            "such as"
+        ],
+        "category": "Exemple"
+    },
+    {
+        "french": "par exemple",
+        "english": "for instance = for example",
+        "french_answers": [
+            "par exemple"
+        ],
+        "english_answers": [
+            "for instance = for example"
+        ],
+        "category": "Exemple"
+    },
+    {
+        "french": "d'habitude",
+        "english": "usually",
+        "french_answers": [
+            "d'habitude",
+            "avoir l'habitude de"
+        ],
+        "english_answers": [
+            "usually"
+        ],
+        "category": "Généralités"
+    },
+    {
+        "french": "pour la plupart",
+        "english": "for the most part",
+        "french_answers": [
+            "pour la plupart"
+        ],
+        "english_answers": [
+            "for the most part"
+        ],
+        "category": "Généralités"
+    },
+    {
+        "french": "en gros",
+        "english": "on the whole",
+        "french_answers": [
+            "en gros"
+        ],
+        "english_answers": [
+            "on the whole"
+        ],
+        "category": "Généralités"
+    },
+    {
+        "french": "de règle",
+        "english": "as a rule",
+        "french_answers": [
+            "de règle"
+        ],
+        "english_answers": [
+            "as a rule"
+        ],
+        "category": "Généralités"
+    },
+    {
+        "french": "dans le cas de",
+        "english": "in the case of",
+        "french_answers": [
+            "dans le cas de"
+        ],
+        "english_answers": [
+            "in the case of"
+        ],
+        "category": "Identification"
+    },
+    {
+        "french": "quant à...",
+        "english": "as for...",
+        "french_answers": [
+            "quant à..."
+        ],
+        "english_answers": [
+            "as for..."
+        ],
+        "category": "Identification"
+    },
+    {
+        "french": "autre part",
+        "english": "elsewhere",
+        "french_answers": [
+            "autre part",
+            "ailleurs"
+        ],
+        "english_answers": [
+            "elsewhere"
+        ],
+        "category": "Identification"
+    },
+    {
+        "french": "partout où",
+        "english": "wherever",
+        "french_answers": [
+            "partout où"
+        ],
+        "english_answers": [
+            "wherever"
+        ],
+        "category": "Identification"
+    },
+    {
+        "french": "préalablement à",
+        "english": "prior to",
+        "french_answers": [
+            "préalablement à"
+        ],
+        "english_answers": [
+            "prior to"
+        ],
+        "category": "Temps"
+    },
+    {
+        "french": "une fois que",
+        "english": "once",
+        "french_answers": [
+            "une fois que"
+        ],
+        "english_answers": [
+            "once"
+        ],
+        "category": "Temps"
+    },
+    {
+        "french": "depuis (moment)",
+        "english": "since",
+        "french_answers": [
+            "depuis (moment)"
+        ],
+        "english_answers": [
+            "since"
+        ],
+        "category": "Temps"
+    },
+    {
+        "french": "depuis",
+        "english": "for",
+        "french_answers": [
+            "depuis",
+            "pendant (period)"
+        ],
+        "english_answers": [
+            "for"
+        ],
+        "category": "Temps"
+    },
+    {
+        "french": "pour l'instant",
+        "english": "for the time being",
+        "french_answers": [
+            "pour l'instant"
+        ],
+        "english_answers": [
+            "for the time being"
+        ],
+        "category": "Temps"
+    },
+    {
+        "french": "jusqu'à ce que",
+        "english": "until",
+        "french_answers": [
+            "jusqu'à ce que"
+        ],
+        "english_answers": [
+            "until",
+            "till"
+        ],
+        "category": "Temps"
+    },
+    {
+        "french": "chaque fois que",
+        "english": "whenever",
+        "french_answers": [
+            "chaque fois que"
+        ],
+        "english_answers": [
+            "whenever"
+        ],
+        "category": "Temps"
+    },
+    {
+        "french": "pendant que",
+        "english": "while",
+        "french_answers": [
+            "pendant que"
+        ],
+        "english_answers": [
+            "while"
+        ],
+        "category": "Temps"
+    },
+    {
+        "french": "apparence",
+        "english": "appearance",
+        "french_answers": [
+            "apparence"
+        ],
+        "english_answers": [
+            "appearance"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "gentillesse",
+        "english": "kindness",
+        "french_answers": [
+            "gentillesse"
+        ],
+        "english_answers": [
+            "kindness"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "pureté",
+        "english": "purity",
+        "french_answers": [
+            "pureté"
+        ],
+        "english_answers": [
+            "purity"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "voisinage",
+        "english": "neighbourhood",
+        "french_answers": [
+            "voisinage"
+        ],
+        "english_answers": [
+            "neighbourhood"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "tourisme",
+        "english": "tourism",
+        "french_answers": [
+            "tourisme"
+        ],
+        "english_answers": [
+            "tourism"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "amélioration",
+        "english": "improvement",
+        "french_answers": [
+            "amélioration"
+        ],
+        "english_answers": [
+            "improvement"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "spécialisation",
+        "english": "specialization",
+        "french_answers": [
+            "spécialisation"
+        ],
+        "english_answers": [
+            "specialization"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "professeur",
+        "english": "teacher",
+        "french_answers": [
+            "professeur"
+        ],
+        "english_answers": [
+            "teacher"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "acteur",
+        "english": "actor",
+        "french_answers": [
+            "acteur"
+        ],
+        "english_answers": [
+            "actor"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "flûtiste",
+        "english": "flutist",
+        "french_answers": [
+            "flûtiste"
+        ],
+        "english_answers": [
+            "flutist"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "aisance",
+        "english": "fluency",
+        "french_answers": [
+            "aisance",
+            "fluidité"
+        ],
+        "english_answers": [
+            "fluency"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "effet de levier",
+        "english": "leverage",
+        "french_answers": [
+            "effet de levier"
+        ],
+        "english_answers": [
+            "leverage"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "amitié",
+        "english": "friendship",
+        "french_answers": [
+            "amitié"
+        ],
+        "english_answers": [
+            "friendship"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "royaume",
+        "english": "kingdom",
+        "french_answers": [
+            "royaume"
+        ],
+        "english_answers": [
+            "kingdom"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "lisible",
+        "english": "readable",
+        "french_answers": [
+            "lisible"
+        ],
+        "english_answers": [
+            "readable"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "compréhensible",
+        "english": "understandable",
+        "french_answers": [
+            "compréhensible"
+        ],
+        "english_answers": [
+            "understandable"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "reconnaissable",
+        "english": "recognizable",
+        "french_answers": [
+            "reconnaissable"
+        ],
+        "english_answers": [
+            "recognizable"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "comptable",
+        "english": "countable",
+        "french_answers": [
+            "comptable"
+        ],
+        "english_answers": [
+            "countable"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "pardonnable",
+        "english": "forgivable",
+        "french_answers": [
+            "pardonnable"
+        ],
+        "english_answers": [
+            "forgivable"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "négociable",
+        "english": "negotiable",
+        "french_answers": [
+            "négociable"
+        ],
+        "english_answers": [
+            "negotiable"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "flexible",
+        "english": "flexible",
+        "french_answers": [
+            "flexible"
+        ],
+        "english_answers": [
+            "flexible"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "comestible",
+        "english": "edible",
+        "french_answers": [
+            "comestible"
+        ],
+        "english_answers": [
+            "edible"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "responsable",
+        "english": "responsible",
+        "french_answers": [
+            "responsable"
+        ],
+        "english_answers": [
+            "responsible"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "impossible",
+        "english": "impossible",
+        "french_answers": [
+            "impossible"
+        ],
+        "english_answers": [
+            "impossible"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "réactif",
+        "english": "responsive",
+        "french_answers": [
+            "réactif"
+        ],
+        "english_answers": [
+            "responsive"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "évasif",
+        "english": "evasive",
+        "french_answers": [
+            "évasif"
+        ],
+        "english_answers": [
+            "evasive"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "dédaigneux",
+        "english": "dismissive",
+        "french_answers": [
+            "dédaigneux"
+        ],
+        "english_answers": [
+            "dismissive"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "expressif",
+        "english": "expressive",
+        "french_answers": [
+            "expressif"
+        ],
+        "english_answers": [
+            "expressive"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "informatif",
+        "english": "informative",
+        "french_answers": [
+            "informatif"
+        ],
+        "english_answers": [
+            "informative"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "légal",
+        "english": "legal",
+        "french_answers": [
+            "légal"
+        ],
+        "english_answers": [
+            "legal"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "brutal",
+        "english": "brutal",
+        "french_answers": [
+            "brutal"
+        ],
+        "english_answers": [
+            "brutal"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "terminal",
+        "english": "terminal",
+        "french_answers": [
+            "terminal"
+        ],
+        "english_answers": [
+            "terminal"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "létal",
+        "english": "lethal",
+        "french_answers": [
+            "létal"
+        ],
+        "english_answers": [
+            "lethal"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "fatal",
+        "english": "fatal",
+        "french_answers": [
+            "fatal"
+        ],
+        "english_answers": [
+            "fatal"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "suicidaire",
+        "english": "suicidal",
+        "french_answers": [
+            "suicidaire"
+        ],
+        "english_answers": [
+            "suicidal"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "exponentiel",
+        "english": "exponential",
+        "french_answers": [
+            "exponentiel"
+        ],
+        "english_answers": [
+            "exponential"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "furieux",
+        "english": "furious",
+        "french_answers": [
+            "furieux"
+        ],
+        "english_answers": [
+            "furious"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "scandaleux",
+        "english": "outrageous",
+        "french_answers": [
+            "scandaleux"
+        ],
+        "english_answers": [
+            "outrageous"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "délicieux",
+        "english": "delicious",
+        "french_answers": [
+            "délicieux"
+        ],
+        "english_answers": [
+            "delicious"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "spacieux",
+        "english": "spacious",
+        "french_answers": [
+            "spacieux"
+        ],
+        "english_answers": [
+            "spacious"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "merveilleux",
+        "english": "marvellous",
+        "french_answers": [
+            "merveilleux"
+        ],
+        "english_answers": [
+            "marvellous"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "frivole",
+        "english": "frivolous",
+        "french_answers": [
+            "frivole"
+        ],
+        "english_answers": [
+            "frivolous"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "fidèle",
+        "english": "faithful",
+        "french_answers": [
+            "fidèle"
+        ],
+        "english_answers": [
+            "faithful"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "utile",
+        "english": "useful",
+        "french_answers": [
+            "utile"
+        ],
+        "english_answers": [
+            "useful"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "plein d'espoir",
+        "english": "hopeful",
+        "french_answers": [
+            "plein d'espoir"
+        ],
+        "english_answers": [
+            "hopeful"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "distrait",
+        "english": "forgetful",
+        "french_answers": [
+            "distrait"
+        ],
+        "english_answers": [
+            "forgetful"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "beau",
+        "english": "beautiful",
+        "french_answers": [
+            "beau"
+        ],
+        "english_answers": [
+            "beautiful"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "larmoyant",
+        "english": "tearful",
+        "french_answers": [
+            "larmoyant"
+        ],
+        "english_answers": [
+            "tearful"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "inutile",
+        "english": "needless",
+        "french_answers": [
+            "inutile"
+        ],
+        "english_answers": [
+            "needless"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "sans entrain",
+        "english": "spiritless",
+        "french_answers": [
+            "sans entrain"
+        ],
+        "english_answers": [
+            "spiritless"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "sans nuage",
+        "english": "cloudless",
+        "french_answers": [
+            "sans nuage"
+        ],
+        "english_answers": [
+            "cloudless"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "inoffensif",
+        "english": "harmless",
+        "french_answers": [
+            "inoffensif"
+        ],
+        "english_answers": [
+            "harmless"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "sans utilité",
+        "english": "useless",
+        "french_answers": [
+            "sans utilité"
+        ],
+        "english_answers": [
+            "useless"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "sans jambes",
+        "english": "legless",
+        "french_answers": [
+            "sans jambes"
+        ],
+        "english_answers": [
+            "legless"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "sans valeur",
+        "english": "worthless",
+        "french_answers": [
+            "sans valeur"
+        ],
+        "english_answers": [
+            "worthless"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "inestimable",
+        "english": "priceless",
+        "french_answers": [
+            "inestimable"
+        ],
+        "english_answers": [
+            "priceless"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "environ trente ans",
+        "english": "thirtyish",
+        "french_answers": [
+            "environ trente ans"
+        ],
+        "english_answers": [
+            "thirtyish"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "jaunâtre",
+        "english": "yellowish",
+        "french_answers": [
+            "jaunâtre"
+        ],
+        "english_answers": [
+            "yellowish"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "qui donne envie d'en reprendre",
+        "english": "moreish",
+        "french_answers": [
+            "qui donne envie d'en reprendre"
+        ],
+        "english_answers": [
+            "moreish"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "espagnol",
+        "english": "Spanish",
+        "french_answers": [
+            "espagnol"
+        ],
+        "english_answers": [
+            "Spanish"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "personnaliser",
+        "english": "customize",
+        "french_answers": [
+            "personnaliser"
+        ],
+        "english_answers": [
+            "customize"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "organiser",
+        "english": "organize",
+        "french_answers": [
+            "organiser"
+        ],
+        "english_answers": [
+            "organize"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "analyser",
+        "english": "analyze",
+        "french_answers": [
+            "analyser"
+        ],
+        "english_answers": [
+            "analyze"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "synthétiser",
+        "english": "synthesize",
+        "french_answers": [
+            "synthétiser"
+        ],
+        "english_answers": [
+            "synthesize"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "reconnaître",
+        "english": "recognize",
+        "french_answers": [
+            "reconnaître"
+        ],
+        "english_answers": [
+            "recognize"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "réaliser",
+        "english": "realize",
+        "french_answers": [
+            "réaliser"
+        ],
+        "english_answers": [
+            "realize"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "se spécialiser",
+        "english": "specialize",
+        "french_answers": [
+            "se spécialiser"
+        ],
+        "english_answers": [
+            "specialize"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "électrifier",
+        "english": "electrify",
+        "french_answers": [
+            "électrifier"
+        ],
+        "english_answers": [
+            "electrify"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "identifier",
+        "english": "identify",
+        "french_answers": [
+            "identifier"
+        ],
+        "english_answers": [
+            "identify"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "terrifier",
+        "english": "terrify",
+        "french_answers": [
+            "terrifier"
+        ],
+        "english_answers": [
+            "terrify"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "purifier",
+        "english": "purify",
+        "french_answers": [
+            "purifier"
+        ],
+        "english_answers": [
+            "purify"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "embellir",
+        "english": "beautify",
+        "french_answers": [
+            "embellir"
+        ],
+        "english_answers": [
+            "beautify"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "horrifier",
+        "english": "horrify",
+        "french_answers": [
+            "horrifier"
+        ],
+        "english_answers": [
+            "horrify"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "activer",
+        "english": "activate",
+        "french_answers": [
+            "activer"
+        ],
+        "english_answers": [
+            "activate"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "animer",
+        "english": "animate",
+        "french_answers": [
+            "animer"
+        ],
+        "english_answers": [
+            "animate"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "désigner",
+        "english": "designate",
+        "french_answers": [
+            "désigner"
+        ],
+        "english_answers": [
+            "designate"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "provenir",
+        "english": "originate",
+        "french_answers": [
+            "provenir"
+        ],
+        "english_answers": [
+            "originate"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "approfondir",
+        "english": "deepen",
+        "french_answers": [
+            "approfondir"
+        ],
+        "english_answers": [
+            "deepen"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "renforcer",
+        "english": "strengthen",
+        "french_answers": [
+            "renforcer"
+        ],
+        "english_answers": [
+            "strengthen"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "voulu",
+        "english": "wanted",
+        "french_answers": [
+            "voulu"
+        ],
+        "english_answers": [
+            "wanted"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "agi",
+        "english": "acted",
+        "french_answers": [
+            "agi"
+        ],
+        "english_answers": [
+            "acted"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "lentement",
+        "english": "slowly",
+        "french_answers": [
+            "lentement"
+        ],
+        "english_answers": [
+            "slowly"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "joyeusement",
+        "english": "happily",
+        "french_answers": [
+            "joyeusement"
+        ],
+        "english_answers": [
+            "happily"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "bruyamment",
+        "english": "loudly",
+        "french_answers": [
+            "bruyamment"
+        ],
+        "english_answers": [
+            "loudly"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "vite",
+        "english": "fast",
+        "french_answers": [
+            "vite"
+        ],
+        "english_answers": [
+            "fast"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "dur",
+        "english": "hard",
+        "french_answers": [
+            "dur",
+            "durement"
+        ],
+        "english_answers": [
+            "hard"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "temps",
+        "english": "time",
+        "french_answers": [
+            "temps"
+        ],
+        "english_answers": [
+            "time"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "personne",
+        "english": "person",
+        "french_answers": [
+            "personne"
+        ],
+        "english_answers": [
+            "person"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "année",
+        "english": "year",
+        "french_answers": [
+            "année"
+        ],
+        "english_answers": [
+            "year"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "façon",
+        "english": "way",
+        "french_answers": [
+            "façon",
+            "chemin"
+        ],
+        "english_answers": [
+            "way"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "jour",
+        "english": "day",
+        "french_answers": [
+            "jour"
+        ],
+        "english_answers": [
+            "day"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "chose",
+        "english": "thing",
+        "french_answers": [
+            "chose"
+        ],
+        "english_answers": [
+            "thing"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "homme",
+        "english": "man",
+        "french_answers": [
+            "homme"
+        ],
+        "english_answers": [
+            "man"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "monde",
+        "english": "world",
+        "french_answers": [
+            "monde"
+        ],
+        "english_answers": [
+            "world"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "vie",
+        "english": "life",
+        "french_answers": [
+            "vie"
+        ],
+        "english_answers": [
+            "life"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "main",
+        "english": "hand",
+        "french_answers": [
+            "main"
+        ],
+        "english_answers": [
+            "hand"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "partie",
+        "english": "part",
+        "french_answers": [
+            "partie"
+        ],
+        "english_answers": [
+            "part"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "enfant",
+        "english": "child",
+        "french_answers": [
+            "enfant"
+        ],
+        "english_answers": [
+            "child"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "œil",
+        "english": "eye",
+        "french_answers": [
+            "œil"
+        ],
+        "english_answers": [
+            "eye"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "femme",
+        "english": "woman",
+        "french_answers": [
+            "femme"
+        ],
+        "english_answers": [
+            "woman"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "endroit",
+        "english": "place",
+        "french_answers": [
+            "endroit"
+        ],
+        "english_answers": [
+            "place"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "travail",
+        "english": "work",
+        "french_answers": [
+            "travail"
+        ],
+        "english_answers": [
+            "work"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "semaine",
+        "english": "week",
+        "french_answers": [
+            "semaine"
+        ],
+        "english_answers": [
+            "week"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "cas",
+        "english": "case",
+        "french_answers": [
+            "cas"
+        ],
+        "english_answers": [
+            "case"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "point",
+        "english": "point",
+        "french_answers": [
+            "point"
+        ],
+        "english_answers": [
+            "point"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "gouvernement",
+        "english": "government",
+        "french_answers": [
+            "gouvernement"
+        ],
+        "english_answers": [
+            "government"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "entreprise",
+        "english": "company",
+        "french_answers": [
+            "entreprise"
+        ],
+        "english_answers": [
+            "company"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "nombre",
+        "english": "number",
+        "french_answers": [
+            "nombre"
+        ],
+        "english_answers": [
+            "number"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "groupe",
+        "english": "group",
+        "french_answers": [
+            "groupe"
+        ],
+        "english_answers": [
+            "group"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "problème",
+        "english": "problem",
+        "french_answers": [
+            "problème"
+        ],
+        "english_answers": [
+            "problem"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "fait",
+        "english": "fact",
+        "french_answers": [
+            "fait"
+        ],
+        "english_answers": [
+            "fact"
+        ],
+        "category": "Nom"
+    },
+    {
+        "french": "bon",
+        "english": "good",
+        "french_answers": [
+            "bon"
+        ],
+        "english_answers": [
+            "good"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "nouveau",
+        "english": "new",
+        "french_answers": [
+            "nouveau"
+        ],
+        "english_answers": [
+            "new"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "premier",
+        "english": "first",
+        "french_answers": [
+            "premier"
+        ],
+        "english_answers": [
+            "first"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "dernier",
+        "english": "last",
+        "french_answers": [
+            "dernier"
+        ],
+        "english_answers": [
+            "last"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "long",
+        "english": "long",
+        "french_answers": [
+            "long"
+        ],
+        "english_answers": [
+            "long"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "grand",
+        "english": "great",
+        "french_answers": [
+            "grand",
+            "génial"
+        ],
+        "english_answers": [
+            "great"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "petit",
+        "english": "little",
+        "french_answers": [
+            "petit"
+        ],
+        "english_answers": [
+            "little"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "propre",
+        "english": "own",
+        "french_answers": [
+            "propre"
+        ],
+        "english_answers": [
+            "own"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "autre",
+        "english": "other",
+        "french_answers": [
+            "autre"
+        ],
+        "english_answers": [
+            "other"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "vieux",
+        "english": "old",
+        "french_answers": [
+            "vieux"
+        ],
+        "english_answers": [
+            "old"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "correct",
+        "english": "right",
+        "french_answers": [
+            "correct",
+            "droit"
+        ],
+        "english_answers": [
+            "right"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "grand",
+        "english": "big",
+        "french_answers": [
+            "grand"
+        ],
+        "english_answers": [
+            "big"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "haut",
+        "english": "high",
+        "french_answers": [
+            "haut",
+            "élevé"
+        ],
+        "english_answers": [
+            "high"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "différent",
+        "english": "different",
+        "french_answers": [
+            "différent"
+        ],
+        "english_answers": [
+            "different"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "petit",
+        "english": "small",
+        "french_answers": [
+            "petit"
+        ],
+        "english_answers": [
+            "small"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "grand",
+        "english": "large",
+        "french_answers": [
+            "grand"
+        ],
+        "english_answers": [
+            "large"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "prochain",
+        "english": "next",
+        "french_answers": [
+            "prochain"
+        ],
+        "english_answers": [
+            "next"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "tôt",
+        "english": "early",
+        "french_answers": [
+            "tôt",
+            "précoce"
+        ],
+        "english_answers": [
+            "early"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "jeune",
+        "english": "young",
+        "french_answers": [
+            "jeune"
+        ],
+        "english_answers": [
+            "young"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "important",
+        "english": "important",
+        "french_answers": [
+            "important"
+        ],
+        "english_answers": [
+            "important"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "peu de",
+        "english": "few",
+        "french_answers": [
+            "peu de"
+        ],
+        "english_answers": [
+            "few"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "public",
+        "english": "public",
+        "french_answers": [
+            "public"
+        ],
+        "english_answers": [
+            "public"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "mauvais",
+        "english": "bad",
+        "french_answers": [
+            "mauvais"
+        ],
+        "english_answers": [
+            "bad"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "même",
+        "english": "same",
+        "french_answers": [
+            "même"
+        ],
+        "english_answers": [
+            "same"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "capable",
+        "english": "able",
+        "french_answers": [
+            "capable"
+        ],
+        "english_answers": [
+            "able"
+        ],
+        "category": "Adjectif"
+    },
+    {
+        "french": "être",
+        "english": "be",
+        "french_answers": [
+            "être"
+        ],
+        "english_answers": [
+            "be"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "avoir",
+        "english": "have",
+        "french_answers": [
+            "avoir"
+        ],
+        "english_answers": [
+            "have"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "faire",
+        "english": "do",
+        "french_answers": [
+            "faire"
+        ],
+        "english_answers": [
+            "do"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "dire",
+        "english": "say",
+        "french_answers": [
+            "dire"
+        ],
+        "english_answers": [
+            "say"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "obtenir",
+        "english": "get",
+        "french_answers": [
+            "obtenir"
+        ],
+        "english_answers": [
+            "get"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "faire",
+        "english": "make",
+        "french_answers": [
+            "faire",
+            "fabriquer"
+        ],
+        "english_answers": [
+            "make"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "aller",
+        "english": "go",
+        "french_answers": [
+            "aller"
+        ],
+        "english_answers": [
+            "go"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "savoir",
+        "english": "know",
+        "french_answers": [
+            "savoir",
+            "connaître"
+        ],
+        "english_answers": [
+            "know"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "prendre",
+        "english": "take",
+        "french_answers": [
+            "prendre"
+        ],
+        "english_answers": [
+            "take"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "voir",
+        "english": "see",
+        "french_answers": [
+            "voir"
+        ],
+        "english_answers": [
+            "see"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "venir",
+        "english": "come",
+        "french_answers": [
+            "venir"
+        ],
+        "english_answers": [
+            "come"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "penser",
+        "english": "think",
+        "french_answers": [
+            "penser"
+        ],
+        "english_answers": [
+            "think"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "regarder",
+        "english": "look",
+        "french_answers": [
+            "regarder"
+        ],
+        "english_answers": [
+            "look"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "vouloir",
+        "english": "want",
+        "french_answers": [
+            "vouloir"
+        ],
+        "english_answers": [
+            "want"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "donner",
+        "english": "give",
+        "french_answers": [
+            "donner"
+        ],
+        "english_answers": [
+            "give"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "utiliser",
+        "english": "use",
+        "french_answers": [
+            "utiliser"
+        ],
+        "english_answers": [
+            "use"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "trouver",
+        "english": "find",
+        "french_answers": [
+            "trouver"
+        ],
+        "english_answers": [
+            "find"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "dire",
+        "english": "tell",
+        "french_answers": [
+            "dire",
+            "raconter"
+        ],
+        "english_answers": [
+            "tell"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "demander",
+        "english": "ask",
+        "french_answers": [
+            "demander"
+        ],
+        "english_answers": [
+            "ask"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "travailler",
+        "english": "work",
+        "french_answers": [
+            "travailler"
+        ],
+        "english_answers": [
+            "work"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "sembler",
+        "english": "seem",
+        "french_answers": [
+            "sembler"
+        ],
+        "english_answers": [
+            "seem"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "ressentir",
+        "english": "feel",
+        "french_answers": [
+            "ressentir"
+        ],
+        "english_answers": [
+            "feel"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "essayer",
+        "english": "try",
+        "french_answers": [
+            "essayer"
+        ],
+        "english_answers": [
+            "try"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "partir",
+        "english": "leave",
+        "french_answers": [
+            "partir",
+            "laisser"
+        ],
+        "english_answers": [
+            "leave"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "appeler",
+        "english": "call",
+        "french_answers": [
+            "appeler"
+        ],
+        "english_answers": [
+            "call"
+        ],
+        "category": "Verbe"
+    },
+    {
+        "french": "très",
+        "english": "very",
+        "french_answers": [
+            "très"
+        ],
+        "english_answers": [
+            "very"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "aussi",
+        "english": "also",
+        "french_answers": [
+            "aussi"
+        ],
+        "english_answers": [
+            "also"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "souvent",
+        "english": "often",
+        "french_answers": [
+            "souvent"
+        ],
+        "english_answers": [
+            "often"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "toujours",
+        "english": "always",
+        "french_answers": [
+            "toujours"
+        ],
+        "english_answers": [
+            "always"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "encore",
+        "english": "again",
+        "french_answers": [
+            "encore"
+        ],
+        "english_answers": [
+            "again"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "jamais",
+        "english": "never",
+        "french_answers": [
+            "jamais"
+        ],
+        "english_answers": [
+            "never"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "vraiment",
+        "english": "really",
+        "french_answers": [
+            "vraiment"
+        ],
+        "english_answers": [
+            "really"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "encore",
+        "english": "still",
+        "french_answers": [
+            "encore",
+            "toujours"
+        ],
+        "english_answers": [
+            "still"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "déjà",
+        "english": "already",
+        "french_answers": [
+            "déjà"
+        ],
+        "english_answers": [
+            "already"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "bientôt",
+        "english": "soon",
+        "french_answers": [
+            "bientôt"
+        ],
+        "english_answers": [
+            "soon"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "bien",
+        "english": "well",
+        "french_answers": [
+            "bien"
+        ],
+        "english_answers": [
+            "well"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "juste",
+        "english": "just",
+        "french_answers": [
+            "juste"
+        ],
+        "english_answers": [
+            "just"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "maintenant",
+        "english": "now",
+        "french_answers": [
+            "maintenant"
+        ],
+        "english_answers": [
+            "now"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "puis",
+        "english": "then",
+        "french_answers": [
+            "puis",
+            "alors"
+        ],
+        "english_answers": [
+            "then"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "là",
+        "english": "there",
+        "french_answers": [
+            "là"
+        ],
+        "english_answers": [
+            "there"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "ici",
+        "english": "here",
+        "french_answers": [
+            "ici"
+        ],
+        "english_answers": [
+            "here"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "aussi",
+        "english": "too",
+        "french_answers": [
+            "aussi",
+            "trop"
+        ],
+        "english_answers": [
+            "too"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "seulement",
+        "english": "only",
+        "french_answers": [
+            "seulement"
+        ],
+        "english_answers": [
+            "only"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "même",
+        "english": "even",
+        "french_answers": [
+            "même"
+        ],
+        "english_answers": [
+            "even"
+        ],
+        "category": "Adverbe"
+    },
+    {
+        "french": "en arrière",
+        "english": "back",
+        "french_answers": [
+            "en arrière"
+        ],
+        "english_answers": [
+            "back"
+        ],
+        "category": "Adverbe"
+    }
+]
