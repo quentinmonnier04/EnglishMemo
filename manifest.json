@@ -1,7 +1,7 @@
 {
     "name": "English Memo",
     "short_name": "EnglishMemo",
-    "start_url": "./index.html",
+    "start_url": "./"",
     "display": "standalone",
     "background_color": "#020617",
     "theme_color": "#22d3ee",
