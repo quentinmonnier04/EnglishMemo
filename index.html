@@ -5,14 +5,35 @@
 <head>
 
     <meta charset="UTF-8">
-    <link rel="manifest" href"theme-color" content="#22d3ee">
-
-
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
     >
+
+    <meta
+        name="theme-color"
+        content="#22d3ee"
+    >
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+    >
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="English Memo"
+    >
+
+    ./manifest.json
+
+    ./icon-192.png
 
     <title>English Memo</title>
 
@@ -21,13 +42,14 @@
         :root {
             --background: #020617;
             --panel: #0f172a;
-            --panel-light: #111c31;
-            --border: #26334a;
+            --panel-light: #162238;
+            --border: #293750;
             --text: #f8fafc;
             --muted: #94a3b8;
             --cyan: #22d3ee;
             --green: #34d399;
             --red: #fb7185;
+            --orange: #fb923c;
         }
 
         * {
@@ -39,24 +61,24 @@
 
             min-height: 100vh;
 
-            color: var(--text);
-
-            font-family:
-                "Segoe UI",
-                system-ui,
-                sans-serif;
-
             background:
                 radial-gradient(
                     circle at top,
                     #10213b 0,
                     var(--background) 48%
                 );
+
+            color: var(--text);
+
+            font-family:
+                Inter,
+                "Segoe UI",
+                system-ui,
+                sans-serif;
         }
 
         button,
-        input,
-        select {
+        input {
             font: inherit;
         }
 
@@ -65,52 +87,46 @@
         }
 
         .application {
-            width: min(
-                800px,
-                calc(100% - 28px)
-            );
+            width:
+                min(
+                    900px,
+                    calc(100% - 28px)
+                );
 
             margin: auto;
 
             padding:
-                30px
+                calc(
+                    24px
+                    + env(safe-area-inset-top)
+                )
                 0
-                50px;
+                calc(
+                    42px
+                    + env(safe-area-inset-bottom)
+                );
         }
 
-        header {
-            display: flex;
-
-            justify-content:
-                space-between;
-
-            align-items:
-                flex-end;
-
-            gap: 16px;
-
-            margin-bottom: 20px;
-        }
-
-        .subtitle {
+        .brand {
             margin:
                 0
                 0
                 7px;
 
-            color: var(--cyan);
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                0.16em;
+            color:
+                var(--cyan);
 
             font-size:
                 0.78rem;
 
             font-weight:
                 800;
+
+            letter-spacing:
+                0.16em;
+
+            text-transform:
+                uppercase;
         }
 
         h1 {
@@ -119,73 +135,333 @@
             font-size:
                 clamp(
                     2rem,
-                    6vw,
-                    3rem
+                    7vw,
+                    3.25rem
                 );
         }
 
-        .toolbar {
-            display: flex;
-
-            gap: 9px;
-
-            flex-wrap: wrap;
+        h2 {
+            margin:
+                0
+                0
+                10px;
         }
 
-        button,
-        select {
+        .muted {
+            color:
+                var(--muted);
+        }
+
+        .hidden {
+            display:
+                none !important;
+        }
+
+        .screen {
+            animation:
+                appear
+                0.2s
+                ease;
+        }
+
+        @keyframes appear {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(
+                        6px
+                    );
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(
+                        0
+                    );
+            }
+        }
+
+        .panel {
+            margin-top:
+                18px;
+
             padding:
-                11px
-                14px;
+                20px;
 
             border:
                 1px solid
                 var(--border);
 
             border-radius:
-                14px;
+                26px;
 
             background:
-                var(--panel);
+                rgba(
+                    15,
+                    23,
+                    42,
+                    0.96
+                );
+
+            box-shadow:
+                0
+                22px
+                55px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.33
+                );
+        }
+
+        .section-title {
+            margin:
+                0
+                0
+                12px;
+
+            font-size:
+                1.05rem;
+        }
+
+        .selection-grid {
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(
+                        160px,
+                        1fr
+                    )
+                );
+
+            gap:
+                11px;
+        }
+
+        .choice-card {
+            position:
+                relative;
+
+            min-height:
+                96px;
+
+            padding:
+                16px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                20px;
+
+            background:
+                var(--panel-light);
+
+            color:
+                var(--text);
+
+            text-align:
+                left;
+
+            transition:
+                0.16s;
+        }
+
+        .choice-card:hover {
+            border-color:
+                #46617f;
+
+            transform:
+                translateY(
+                    -2px
+                );
+        }
+
+        .choice-card.selected {
+            border:
+                2px solid
+                var(--cyan);
+
+            background:
+                #123247;
+
+            box-shadow:
+                0
+                0
+                0
+                3px
+                rgba(
+                    34,
+                    211,
+                    238,
+                    0.09
+                );
+        }
+
+        .choice-card .icon {
+            display:
+                block;
+
+            margin-bottom:
+                5px;
+
+            font-size:
+                1.55rem;
+        }
+
+        .choice-card strong {
+            display:
+                block;
+        }
+
+        .choice-card small {
+            display:
+                block;
+
+            margin-top:
+                5px;
+
+            color:
+                var(--muted);
+        }
+
+        .choice-card .check {
+            display:
+                none;
+
+            position:
+                absolute;
+
+            top:
+                9px;
+
+            right:
+                11px;
+
+            color:
+                var(--cyan);
+        }
+
+        .choice-card.selected .check {
+            display:
+                block;
+        }
+
+        .choice-card.compact {
+            min-height:
+                68px;
+
+            text-align:
+                center;
+        }
+
+        .button {
+            padding:
+                12px
+                17px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                15px;
+
+            background:
+                var(--panel-light);
 
             color:
                 var(--text);
 
             font-weight:
-                700;
+                800;
         }
 
-        button:hover {
+        .button:hover {
             filter:
-                brightness(1.12);
+                brightness(
+                    1.12
+                );
         }
 
-        .primary-button {
-            background:
-                var(--cyan);
-
+        .button.primary {
             border-color:
                 var(--cyan);
 
+            background:
+                var(--cyan);
+
             color:
-                #06202a;
+                #05202a;
         }
 
-        .source {
-            margin:
-                0
-                0
-                15px;
+        .button.light {
+            background:
+                white;
+
+            color:
+                #0f172a;
+        }
+
+        .button.danger {
+            border-color:
+                var(--red);
+
+            color:
+                #fecdd3;
+        }
+
+        .button.full {
+            width:
+                100%;
+
+            min-height:
+                52px;
+
+            margin-top:
+                17px;
+        }
+
+        .status {
+            min-height:
+                22px;
+
+            margin-top:
+                12px;
 
             color:
                 var(--muted);
+        }
 
-            font-size:
-                0.82rem;
+        .game-header {
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                10px;
+
+            margin-bottom:
+                14px;
         }
 
         .statistics {
-            display: grid;
+            display:
+                grid;
 
             grid-template-columns:
                 repeat(
@@ -193,14 +469,13 @@
                     1fr
                 );
 
-            gap: 10px;
-
-            margin-bottom:
-                12px;
+            gap:
+                9px;
         }
 
         .statistic {
-            padding: 11px;
+            padding:
+                10px;
 
             border:
                 1px solid
@@ -210,54 +485,46 @@
                 16px;
 
             background:
-                rgba(
-                    15,
-                    23,
-                    42,
-                    0.94
-                );
+                var(--panel);
 
             text-align:
                 center;
         }
 
-        .statistic-label {
+        .statistic small {
+            display:
+                block;
+
             color:
                 var(--muted);
-
-            font-size:
-                0.75rem;
         }
 
-        .statistic-value {
-            margin-top:
-                3px;
-
+        .statistic strong {
             font-size:
                 1.25rem;
-
-            font-weight:
-                850;
         }
 
-        #score {
+        .green {
             color:
                 var(--green);
         }
 
-        #errors {
+        .red {
             color:
                 var(--red);
         }
 
         .progress {
-            height: 8px;
+            height:
+                8px;
+
+            margin:
+                12px
+                0
+                17px;
 
             overflow:
                 hidden;
-
-            margin-bottom:
-                18px;
 
             border-radius:
                 999px;
@@ -266,8 +533,9 @@
                 #1e293b;
         }
 
-        #progressBar {
-            width: 0;
+        .progress div {
+            width:
+                0;
 
             height:
                 100%;
@@ -280,11 +548,12 @@
                 0.25s;
         }
 
-        .card {
+        .flashcard {
             min-height:
                 410px;
 
-            display: flex;
+            display:
+                flex;
 
             flex-direction:
                 column;
@@ -294,9 +563,9 @@
 
             padding:
                 clamp(
-                    25px,
+                    24px,
                     6vw,
-                    46px
+                    48px
                 );
 
             border:
@@ -309,7 +578,7 @@
             background:
                 linear-gradient(
                     145deg,
-                    var(--panel-light),
+                    #111c31,
                     #080f1d
                 );
 
@@ -326,11 +595,11 @@
         }
 
         .instruction {
-            text-align:
-                center;
-
             color:
                 var(--muted);
+
+            text-align:
+                center;
 
             font-size:
                 0.8rem;
@@ -345,7 +614,7 @@
                 0.12em;
         }
 
-        #word {
+        .prompt {
             margin:
                 15px
                 0
@@ -357,19 +626,19 @@
             font-size:
                 clamp(
                     2.2rem,
-                    8vw,
-                    4rem
+                    9vw,
+                    4.4rem
                 );
 
             line-height:
                 1.08;
         }
 
-        #category {
+        .category {
             margin:
                 0
                 0
-                34px;
+                32px;
 
             color:
                 var(--cyan);
@@ -378,14 +647,16 @@
                 center;
         }
 
-        #answer {
-            width: 100%;
+        .answer {
+            width:
+                100%;
 
-            height: 58px;
+            height:
+                58px;
 
             padding:
                 0
-                15px;
+                14px;
 
             border:
                 2px solid
@@ -407,10 +678,10 @@
                 center;
 
             font-size:
-                1.14rem;
+                1.15rem;
         }
 
-        #answer:focus {
+        .answer:focus {
             border-color:
                 var(--cyan);
 
@@ -427,31 +698,6 @@
                 );
         }
 
-        #validateButton {
-            width:
-                100%;
-
-            height:
-                50px;
-
-            margin-top:
-                11px;
-        }
-
-        #nextButton {
-            width:
-                100%;
-
-            margin-top:
-                11px;
-
-            background:
-                white;
-
-            color:
-                #0f172a;
-        }
-
         .feedback {
             display:
                 none;
@@ -465,19 +711,16 @@
             border-radius:
                 15px;
 
-            font-weight:
-                800;
-
             text-align:
                 center;
+
+            font-weight:
+                800;
         }
 
         .feedback.correct {
             display:
                 block;
-
-            color:
-                var(--green);
 
             background:
                 rgba(
@@ -486,14 +729,14 @@
                     153,
                     0.1
                 );
+
+            color:
+                var(--green);
         }
 
         .feedback.incorrect {
             display:
                 block;
-
-            color:
-                var(--red);
 
             background:
                 rgba(
@@ -502,77 +745,258 @@
                     133,
                     0.1
                 );
+
+            color:
+                var(--red);
         }
 
-        .hidden {
+        .game-actions {
             display:
-                none !important;
+                flex;
+
+            gap:
+                10px;
+
+            margin-top:
+                12px;
         }
 
-        .finish {
+        .game-actions .button {
+            flex:
+                1;
+        }
+
+        .result-hero {
+            padding:
+                22px;
+
             text-align:
                 center;
         }
 
-        .trophy {
+        .result-percent {
             font-size:
-                4rem;
+                clamp(
+                    3.5rem,
+                    15vw,
+                    6.5rem
+                );
+
+            font-weight:
+                900;
+
+            line-height:
+                1;
         }
 
-        .finish-actions {
+        .result-grid {
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(
+                        135px,
+                        1fr
+                    )
+                );
+
+            gap:
+                10px;
+
+            margin-top:
+                18px;
+        }
+
+        .result-card {
+            padding:
+                14px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                17px;
+
+            background:
+                #07101f;
+
+            text-align:
+                center;
+        }
+
+        .result-card strong {
+            display:
+                block;
+
+            font-size:
+                1.5rem;
+        }
+
+        .category-result {
+            margin-top:
+                10px;
+
+            padding:
+                14px;
+
+            border-radius:
+                17px;
+
+            background:
+                #07101f;
+        }
+
+        .category-result-line {
             display:
                 flex;
 
             justify-content:
-                center;
+                space-between;
 
-            flex-wrap:
-                wrap;
-
-            gap: 10px;
-
-            margin-top:
-                22px;
+            gap:
+                10px;
         }
 
-        .error-box {
-            padding:
+        .mini-progress {
+            height:
+                7px;
+
+            margin-top:
+                9px;
+
+            overflow:
+                hidden;
+
+            border-radius:
+                999px;
+
+            background:
+                #1e293b;
+        }
+
+        .mini-progress div {
+            height:
+                100%;
+        }
+
+        .result-actions {
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    2,
+                    1fr
+                );
+
+            gap:
+                10px;
+
+            margin-top:
                 18px;
+        }
+
+        .dialog {
+            position:
+                fixed;
+
+            inset:
+                0;
+
+            z-index:
+                20;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                20px;
+
+            background:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.67
+                );
+        }
+
+        .dialog-box {
+            width:
+                min(
+                    420px,
+                    100%
+                );
+
+            padding:
+                22px;
 
             border:
                 1px solid
-                var(--red);
+                var(--border);
 
             border-radius:
-                18px;
+                24px;
 
             background:
-                #451a1a;
-
-            color:
-                #fecdd3;
+                var(--panel);
         }
 
-        footer {
+        .dialog-actions {
+            display:
+                flex;
+
+            gap:
+                10px;
+
             margin-top:
-                15px;
+                18px;
+        }
 
-            color:
-                #64748b;
-
-            text-align:
-                center;
-
-            font-size:
-                0.78rem;
+        .dialog-actions button {
+            flex:
+                1;
         }
 
         @media (
             max-width:
-            650px
+            620px
         ) {
 
-            header {
+            .application {
+                width:
+                    min(
+                        calc(100% - 20px),
+                        900px
+                    );
+            }
+
+            .selection-grid {
+                grid-template-columns:
+                    repeat(
+                        2,
+                        1fr
+                    );
+            }
+
+            .choice-card {
+                min-height:
+                    90px;
+
+                padding:
+                    13px;
+            }
+
+            .game-header {
                 align-items:
                     stretch;
 
@@ -580,13 +1004,14 @@
                     column;
             }
 
-            .toolbar > * {
-                flex: 1;
+            .result-actions {
+                grid-template-columns:
+                    1fr;
             }
 
-            .card {
+            .flashcard {
                 min-height:
-                    380px;
+                    390px;
             }
         }
 
@@ -598,275 +1023,670 @@
 
     <main class="application">
 
-        <header>
+        <!-- ÉCRAN D'ACCUEIL -->
 
-            <div>
+        <section
+            id="homeScreen"
+            class="screen"
+        >
 
-                <p class="subtitle">
-                    English Memo
-                </p>
+            <p class="brand">
+                English Memo
+            </p>
 
-                <h1>
-                    Trouve le bon mot
-                </h1>
+            <h1>
+                Prépare ta session
+            </h1>
+
+            <p class="muted">
+                Choisis une catégorie, un sens et un nombre de cartes.
+            </p>
+
+
+            <div class="panel">
+
+                <h2 class="section-title">
+                    1. Catégorie
+                </h2>
+
+                <div
+                    id="categoryCards"
+                    class="selection-grid"
+                ></div>
 
             </div>
 
-            <div class="toolbar">
 
-                <button id="directionButton">
-                    Français → Anglais
-                </button>
+            <div class="panel">
 
-                <select id="categoryFilter">
+                <h2 class="section-title">
+                    2. Sens de traduction
+                </h2>
 
-                    <option value="Toutes">
-                        Toutes les catégories
-                    </option>
+                <div
+                    id="directionCards"
+                    class="selection-grid"
+                >
 
-                </select>
+                    <button
+                        class="choice-card compact selected"
+                        data-direction="fr-en"
+                    >
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        <strong>
+                            Français → Anglais
+                        </strong>
+
+                    </button>
+
+
+                    <button
+                        class="choice-card compact"
+                        data-direction="en-fr"
+                    >
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        <strong>
+                            Anglais → Français
+                        </strong>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <h2 class="section-title">
+                    3. Nombre de cartes
+                </h2>
+
+                <div
+                    id="sizeCards"
+                    class="selection-grid"
+                >
+
+                    <button
+                        class="choice-card compact selected"
+                        data-size="10"
+                    >
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        <strong>
+                            10 cartes
+                        </strong>
+
+                    </button>
+
+
+                    <button
+                        class="choice-card compact"
+                        data-size="20"
+                    >
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        <strong>
+                            20 cartes
+                        </strong>
+
+                    </button>
+
+
+                    <button
+                        class="choice-card compact"
+                        data-size="50"
+                    >
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        <strong>
+                            50 cartes
+                        </strong>
+
+                    </button>
+
+
+                    <button
+                        class="choice-card compact"
+                        data-size="all"
+                    >
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        <strong>
+                            Toutes
+                        </strong>
+
+                    </button>
+
+
+                    <button
+                        class="choice-card compact"
+                        data-size="infinite"
+                    >
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        <strong>
+                            ∞ Infini
+                        </strong>
+
+                    </button>
+
+                </div>
+
 
                 <button
-                    id="reloadButton"
-                    class="primary-button"
+                    id="startButton"
+                    class="button primary full"
+                    disabled
                 >
-                    ↻ Relire Excel
+                    Commencer la session
                 </button>
 
-            </div>
 
-        </header>
-
-        <p
-            id="source"
-            class="source"
-        >
-            Chargement du fichier Excel...
-        </p>
-
-        <section class="statistics">
-
-            <div class="statistic">
-
-                <div class="statistic-label">
-                    Carte
-                </div>
-
-                <div
-                    id="counter"
-                    class="statistic-value"
+                <p
+                    id="loadStatus"
+                    class="status"
                 >
-                    0 / 0
-                </div>
-
-            </div>
-
-            <div class="statistic">
-
-                <div class="statistic-label">
-                    Score
-                </div>
-
-                <div
-                    id="score"
-                    class="statistic-value"
-                >
-                    0
-                </div>
-
-            </div>
-
-            <div class="statistic">
-
-                <div class="statistic-label">
-                    Erreurs
-                </div>
-
-                <div
-                    id="errors"
-                    class="statistic-value"
-                >
-                    0
-                </div>
+                    Chargement du vocabulaire...
+                </p>
 
             </div>
 
         </section>
 
-        <div class="progress">
 
-            <div id="progressBar"></div>
+        <!-- ÉCRAN DE JEU -->
 
-        </div>
+        <section
+            id="gameScreen"
+            class="screen hidden"
+        >
 
-        <section class="card">
+            <div class="game-header">
 
-            <div id="loadingArea">
-                Chargement du vocabulaire...
+                <div>
+
+                    <p class="brand">
+                        English Memo
+                    </p>
+
+                    <h2 id="sessionTitle">
+                        Révision
+                    </h2>
+
+                </div>
+
+
+                <button
+                    id="quitButton"
+                    class="button danger"
+                >
+                    Terminer
+                </button>
+
             </div>
 
-            <div
-                id="errorArea"
-                class="error-box hidden"
-            ></div>
+
+            <div class="statistics">
+
+                <div class="statistic">
+
+                    <small id="counterLabel">
+                        Carte
+                    </small>
+
+                    <strong id="counter">
+                        1 / 10
+                    </strong>
+
+                </div>
+
+
+                <div class="statistic">
+
+                    <small>
+                        Score
+                    </small>
+
+                    <strong
+                        id="score"
+                        class="green"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="statistic">
+
+                    <small>
+                        Erreurs
+                    </small>
+
+                    <strong
+                        id="errorCount"
+                        class="red"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
 
             <div
-                id="gameArea"
-                class="hidden"
+                id="progress"
+                class="progress"
             >
+
+                <div id="progressBar"></div>
+
+            </div>
+
+
+            <article class="flashcard">
 
                 <div
                     id="instruction"
                     class="instruction"
-                >
-                    Traduis en anglais
-                </div>
+                ></div>
 
-                <h2 id="word"></h2>
+                <h2
+                    id="prompt"
+                    class="prompt"
+                ></h2>
 
-                <p id="category"></p>
+                <p
+                    id="wordCategory"
+                    class="category"
+                ></p>
+
 
                 <form id="answerForm">
 
                     <input
-                        id="answer"
+                        id="answerInput"
+                        class="answer"
                         autocomplete="off"
+                        autocapitalize="none"
                         placeholder="Écris ta réponse ici..."
                     >
 
                     <button
                         id="validateButton"
-                        class="primary-button"
                         type="submit"
+                        class="button primary full"
                     >
                         Valider
                     </button>
 
                 </form>
 
+
                 <div
                     id="feedback"
                     class="feedback"
                 ></div>
 
-                <button
-                    id="nextButton"
-                    class="hidden"
+
+                <div class="game-actions">
+
+                    <button
+                        id="nextButton"
+                        class="button light hidden"
+                    >
+                        Carte suivante →
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- ÉCRAN DE BILAN -->
+
+        <section
+            id="resultScreen"
+            class="screen hidden"
+        >
+
+            <p class="brand">
+                English Memo
+            </p>
+
+            <h1>
+                Bilan de la session
+            </h1>
+
+
+            <div class="panel result-hero">
+
+                <div
+                    id="resultPercent"
+                    class="result-percent"
                 >
-                    Carte suivante →
-                </button>
+                    0 %
+                </div>
+
+                <p
+                    id="resultMessage"
+                    class="muted"
+                ></p>
+
+
+                <div class="result-grid">
+
+                    <div class="result-card">
+
+                        <strong id="resultQuestions">
+                            0
+                        </strong>
+
+                        <span>
+                            questions
+                        </span>
+
+                    </div>
+
+
+                    <div class="result-card">
+
+                        <strong
+                            id="resultCorrect"
+                            class="green"
+                        >
+                            0
+                        </strong>
+
+                        <span>
+                            bonnes réponses
+                        </span>
+
+                    </div>
+
+
+                    <div class="result-card">
+
+                        <strong
+                            id="resultErrors"
+                            class="red"
+                        >
+                            0
+                        </strong>
+
+                        <span>
+                            erreurs
+                        </span>
+
+                    </div>
+
+
+                    <div class="result-card">
+
+                        <strong id="resultUnique">
+                            0
+                        </strong>
+
+                        <span>
+                            mots différents
+                        </span>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <div
-                id="finishArea"
-                class="finish hidden"
-            >
 
-                <div class="trophy">
-                    🏆
-                </div>
+            <div class="panel">
 
                 <h2>
-                    Partie terminée
+                    Bilan par catégorie
                 </h2>
 
-                <p id="finalScore"></p>
+                <div id="categoryResults"></div>
 
-                <div class="finish-actions">
+            </div>
 
-                    <button
-                        id="restartButton"
-                        class="primary-button"
-                    >
-                        Rejouer
-                    </button>
 
-                    <button
-                        id="retryButton"
-                        class="hidden"
-                    >
-                        Revoir mes erreurs
-                    </button>
+            <div class="result-actions">
 
-                </div>
+                <button
+                    id="replayButton"
+                    class="button primary"
+                >
+                    Rejouer avec les mêmes paramètres
+                </button>
+
+
+                <button
+                    id="reviewErrorsButton"
+                    class="button"
+                >
+                    Revoir uniquement les erreurs
+                </button>
+
+
+                <button
+                    id="homeButton"
+                    class="button"
+                >
+                    Retour à l'accueil
+                </button>
 
             </div>
 
         </section>
 
-        <footer>
-            Modifie vocabulaire.xlsx, enregistre-le,
-            puis clique sur « Relire Excel ».
-        </footer>
-
     </main>
+
+
+    <!-- FENÊTRE DE CONFIRMATION -->
+
+    <div
+        id="quitDialog"
+        class="dialog hidden"
+    >
+
+        <div class="dialog-box">
+
+            <h2>
+                Terminer la session ?
+            </h2>
+
+            <p class="muted">
+                Les réponses déjà données seront utilisées pour établir le bilan.
+            </p>
+
+
+            <div class="dialog-actions">
+
+                <button
+                    id="continueButton"
+                    class="button"
+                >
+                    Continuer
+                </button>
+
+
+                <button
+                    id="confirmQuitButton"
+                    class="button danger"
+                >
+                    Voir le bilan
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
 
 
     <script>
 
-        let allWords = [];
+        const state = {
 
-        let deck = [];
+            allWords: [],
 
-        let mistakes = [];
+            selectedCategory:
+                "Toutes",
 
-        let currentIndex = 0;
+            direction:
+                "fr-en",
 
-        let score = 0;
+            size:
+                "10",
 
-        let direction = "fr-en";
+            deck: [],
 
-        let answered = false;
+            index:
+                0,
 
-        function normalize(text) {
+            cycleIndex:
+                0,
 
-    if (!text) {
-        return "";
-    }
+            current:
+                null,
 
-    return String(text)
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(
-            /[\u0300-\u036f]/g,
-            ""
-        )
-        .trim()
-        .replace(
-            /\s+/g,
-            " "
-        );
+            answered:
+                false,
 
-}
+            correct:
+                0,
 
-   
+            errors:
+                0,
+
+            results: [],
+
+            mistakes:
+                new Map(),
+
+            reviewPool:
+                null,
+
+            lastSettings:
+                null
+        };
+
+
+        const categoryIcons = {
+
+            "Verbes":
+                "🔤",
+
+            "Verbe":
+                "🔤",
+
+            "Connecteurs":
+                "🔗",
+
+            "Expressions":
+                "💬",
+
+            "Travail":
+                "💼",
+
+            "Énergie":
+                "⚡",
+
+            "Sans catégorie":
+                "📁"
+        };
 
 
         function getElement(id) {
 
-            return document.getElementById(id);
+            return document.getElementById(
+                id
+            );
 
         }
 
 
-        function shuffle(array) {
+        function normalize(text) {
 
-            return array
-                .map(
-                    value => ({
-                        value: value,
-                        random: Math.random()
-                    })
+            return String(
+                text ?? ""
+            )
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(
+                    /[\u0300-\u036f]/g,
+                    ""
                 )
-                .sort(
-                    (first, second) =>
-                        first.random
-                        - second.random
+                .trim()
+                .replace(
+                    /[.!?…]+$/g,
+                    ""
                 )
-                .map(
-                    item => item.value
+                .replace(
+                    /\s+/g,
+                    " "
                 );
+
+        }
+
+
+        function shuffle(items) {
+
+            const copy =
+                [...items];
+
+            for (
+                let index =
+                    copy.length - 1;
+
+                index > 0;
+
+                index -= 1
+            ) {
+
+                const randomIndex =
+                    Math.floor(
+                        Math.random()
+                        * (index + 1)
+                    );
+
+                [
+                    copy[index],
+                    copy[randomIndex]
+                ] = [
+                    copy[randomIndex],
+                    copy[index]
+                ];
+
+            }
+
+            return copy;
 
         }
 
@@ -874,646 +1694,340 @@
         function escapeHtml(text) {
 
             const element =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
-            element.textContent = text;
+            element.textContent =
+                text;
 
             return element.innerHTML;
 
         }
 
 
-        async function loadExcel() {
-
-    try {
-
-        const response =
-            await fetch(
-                "vocabulaire.json?time="
-                + Date.now()
-            );
-
-        const words =
-            await response.json();
-
-        allWords = words;
-
-        document
-            .getElementById("source")
-            .textContent =
-            words.length
-            + " mots chargés";
-
-        fillCategories();
-
-        startGame();
-
-    }
-
-    catch(error) {
-
-        console.error(error);
-
-        alert(
-            "Impossible de charger vocabulaire.json"
-        );
-
-    }
-
-}
-
-
-        function fillCategories() {
-
-            const categoryFilter =
-                getElement(
-                    "categoryFilter"
-                );
-
-            const selectedCategory =
-                categoryFilter.value;
-
-            const categories = [
-                ...new Set(
-                    allWords.map(
-                        word =>
-                            word.category
-                    )
-                )
-            ].sort();
-
-            categoryFilter.innerHTML =
-                '<option value="Toutes">'
-                + 'Toutes les catégories'
-                + '</option>'
-                + categories
-                    .map(
-                        category =>
-                            '<option value="'
-                            + escapeHtml(category)
-                            + '">'
-                            + escapeHtml(category)
-                            + '</option>'
-                    )
-                    .join("");
-
-            if (
-                categories.includes(
-                    selectedCategory
-                )
-            ) {
-
-                categoryFilter.value =
-                    selectedCategory;
-
-            }
-
-        }
-
-
-        function startGame(
-            customDeck = null
+        function showScreen(
+            screenId
         ) {
 
-            const selectedCategory =
-                getElement(
-                    "categoryFilter"
-                ).value;
+            const screens = [
+                "homeScreen",
+                "gameScreen",
+                "resultScreen"
+            ];
 
-            let sourceWords;
+            screens.forEach(
+                function(screenName) {
 
-            if (customDeck) {
-
-                sourceWords =
-                    customDeck;
-
-            } else if (
-                selectedCategory
-                === "Toutes"
-            ) {
-
-                sourceWords =
-                    allWords;
-
-            } else {
-
-                sourceWords =
-                    allWords.filter(
-                        word =>
-                            word.category
-                            === selectedCategory
+                    getElement(
+                        screenName
+                    ).classList.toggle(
+                        "hidden",
+                        screenName
+                        !== screenId
                     );
 
-            }
-
-            deck =
-                shuffle(
-                    [...sourceWords]
-                );
-
-            currentIndex = 0;
-
-            score = 0;
-
-            mistakes = [];
-
-            answered = false;
-
-            getElement(
-                "loadingArea"
-            ).classList.add(
-                "hidden"
+                }
             );
 
-            getElement(
-                "finishArea"
-            ).classList.add(
-                "hidden"
+            window.scrollTo(
+                0,
+                0
             );
-
-            getElement(
-                "gameArea"
-            ).classList.remove(
-                "hidden"
-            );
-
-            renderCard();
 
         }
 
 
-        function renderCard() {
-
-            if (!deck.length) {
-
-                getElement(
-                    "word"
-                ).textContent =
-                    "Aucun mot dans cette catégorie";
-
-                getElement(
-                    "answer"
-                ).disabled =
-                    true;
-
-                return;
-
-            }
-
-            const current =
-                deck[currentIndex];
-
-            let displayedWord;
-
-            if (
-                direction
-                === "fr-en"
-            ) {
-
-                displayedWord =
-                    current.french;
-
-                getElement(
-                    "instruction"
-                ).textContent =
-                    "Traduis en anglais";
-
-            } else {
-
-                displayedWord =
-                    current.english;
-
-                getElement(
-                    "instruction"
-                ).textContent =
-                    "Traduis en français";
-
-            }
-
-            getElement(
-                "word"
-            ).textContent =
-                displayedWord;
-
-            getElement(
-                "category"
-            ).textContent =
-                current.category;
-
-            const answerInput =
-                getElement(
-                    "answer"
-                );
-
-            answerInput.value =
-                "";
-
-            answerInput.disabled =
-                false;
-
-            answerInput.focus();
-
-            const feedback =
-                getElement(
-                    "feedback"
-                );
-
-            feedback.className =
-                "feedback";
-
-            feedback.textContent =
-                "";
-
-            getElement(
-                "validateButton"
-            ).classList.remove(
-                "hidden"
-            );
-
-            getElement(
-                "nextButton"
-            ).classList.add(
-                "hidden"
-            );
-
-            getElement(
-                "counter"
-            ).textContent =
-                (currentIndex + 1)
-                + " / "
-                + deck.length;
-
-            getElement(
-                "score"
-            ).textContent =
-                score;
-
-            getElement(
-                "errors"
-            ).textContent =
-                mistakes.length;
-
-            getElement(
-                "progressBar"
-            ).style.width =
-                (
-                    currentIndex
-                    / deck.length
-                    * 100
-                )
-                + "%";
-
-            answered = false;
-
-        }
-
-
-        async function checkAnswer(
-            event
+        function calculatePercent(
+            correct,
+            total
         ) {
 
-            event.preventDefault();
-
-            const answer =
-                getElement(
-                    "answer"
-                ).value;
-
-            if (
-                answered
-                || !answer.trim()
-                || !deck.length
-            ) {
-
-                return;
-
+            if (!total) {
+                return 0;
             }
 
-            const current =
-                deck[currentIndex];
+            return Math.round(
+                correct
+                / total
+                * 100
+            );
 
-            let expectedAnswers;
+        }
 
-            if (
-                direction
-                === "fr-en"
-            ) {
 
-                expectedAnswers =
-                    current.english_answers;
+        function getResultColor(
+            result
+        ) {
 
-            } else {
-
-                expectedAnswers =
-                    current.french_answers;
-
+            if (result >= 90) {
+                return "var(--green)";
             }
 
-            const result = {
+            if (result >= 75) {
+                return "var(--cyan)";
+            }
 
-    correct:
-        expectedAnswers.some(
-            value =>
-                normalize(value)
-                === normalize(answer)
-        )
+            if (result >= 50) {
+                return "var(--orange)";
+            }
 
-};
+            return "var(--red)";
+
+        }
 
 
-            answered = true;
+        async function loadVocabulary() {
 
-            getElement(
-                "answer"
-            ).disabled =
-                true;
+            try {
 
-            getElement(
-                "validateButton"
-            ).classList.add(
-                "hidden"
-            );
-
-            getElement(
-                "nextButton"
-            ).classList.remove(
-                "hidden"
-            );
-
-            const feedback =
-                getElement(
-                    "feedback"
-                );
-
-            if (result.correct) {
-
-                score += 1;
-
-                feedback.className =
-                    "feedback correct";
-
-                feedback.textContent =
-                    "✓ Bonne réponse !";
-
-            } else {
-
-                mistakes.push(
-                    current
-                );
-
-                feedback.className =
-                    "feedback incorrect";
-
-                feedback.textContent =
-                    "✕ Réponses acceptées : "
-                    + expectedAnswers.join(
-                        " ou "
+                const response =
+                    await fetch(
+                        "./vocabulaire.json?version="
+                        + Date.now()
                     );
 
-            }
+                if (!response.ok) {
 
-            getElement(
-                "score"
-            ).textContent =
-                score;
-
-            getElement(
-                "errors"
-            ).textContent =
-                mistakes.length;
-
-            getElement(
-                "progressBar"
-            ).style.width =
-                (
-                    (
-                        currentIndex
-                        + 1
-                    )
-                    / deck.length
-                    * 100
-                )
-                + "%";
-
-        }
-
-
-        function nextCard() {
-
-            if (
-                currentIndex
-                >= deck.length - 1
-            ) {
-
-                finishGame();
-
-                return;
-
-            }
-
-            currentIndex += 1;
-
-            renderCard();
-
-        }
-
-
-        function finishGame() {
-
-            getElement(
-                "gameArea"
-            ).classList.add(
-                "hidden"
-            );
-
-            getElement(
-                "finishArea"
-            ).classList.remove(
-                "hidden"
-            );
-
-            const wordLabel =
-                score > 1
-                ? "mots"
-                : "mot";
-
-            getElement(
-                "finalScore"
-            ).innerHTML =
-                "Tu as trouvé <strong>"
-                + score
-                + "</strong> "
-                + wordLabel
-                + " sur <strong>"
-                + deck.length
-                + "</strong>.";
-
-            getElement(
-                "retryButton"
-            ).classList.toggle(
-                "hidden",
-                mistakes.length === 0
-            );
-
-            getElement(
-                "progressBar"
-            ).style.width =
-                "100%";
-
-        }
-
-
-        getElement(
-            "answerForm"
-        ).addEventListener(
-            "submit",
-            checkAnswer
-        );
-
-
-        getElement(
-            "nextButton"
-        ).addEventListener(
-            "click",
-            nextCard
-        );
-
-
-        getElement(
-            "reloadButton"
-        ).addEventListener(
-            "click",
-            loadExcel
-        );
-
-
-        getElement(
-            "restartButton"
-        ).addEventListener(
-            "click",
-            function () {
-
-                startGame();
-
-            }
-        );
-
-
-        getElement(
-            "retryButton"
-        ).addEventListener(
-            "click",
-            function () {
-
-                const uniqueMistakes = [
-                    ...new Map(
-                        mistakes.map(
-                            word => [
-                                word.id,
-                                word
-                            ]
-                        )
-                    ).values()
-                ];
-
-                startGame(
-                    uniqueMistakes
-                );
-
-            }
-        );
-
-
-        getElement(
-            "directionButton"
-        ).addEventListener(
-            "click",
-            function () {
-
-                if (
-                    direction
-                    === "fr-en"
-                ) {
-
-                    direction =
-                        "en-fr";
-
-                    this.textContent =
-                        "Anglais → Français";
-
-                } else {
-
-                    direction =
-                        "fr-en";
-
-                    this.textContent =
-                        "Français → Anglais";
+                    throw new Error(
+                        "Erreur HTTP "
+                        + response.status
+                    );
 
                 }
 
-                startGame();
+                const data =
+                    await response.json();
+
+                if (
+                    !Array.isArray(data)
+                    || data.length === 0
+                ) {
+
+                    throw new Error(
+                        "Le fichier vocabulaire.json "
+                        + "est vide ou invalide."
+                    );
+
+                }
+
+                state.allWords =
+                    data.map(
+                        function(word, index) {
+
+                            return {
+
+                                ...word,
+
+                                id:
+                                    word.id
+                                    ?? index + 1,
+
+                                category:
+                                    word.category
+                                    || "Sans catégorie",
+
+                                french_answers:
+                                    Array.isArray(
+                                        word.french_answers
+                                    )
+                                    ? word.french_answers
+                                    : [word.french],
+
+                                english_answers:
+                                    Array.isArray(
+                                        word.english_answers
+                                    )
+                                    ? word.english_answers
+                                    : [word.english]
+                            };
+
+                        }
+                    );
+
+                getElement(
+                    "loadStatus"
+                ).textContent =
+                    state.allWords.length
+                    + " mots disponibles";
+
+                getElement(
+                    "startButton"
+                ).disabled =
+                    false;
+
+                renderCategoryCards();
+
+            } catch (error) {
+
+                getElement(
+                    "loadStatus"
+                ).textContent =
+                    "Impossible de charger le vocabulaire : "
+                    + error.message;
+
+                getElement(
+                    "startButton"
+                ).disabled =
+                    true;
 
             }
-        );
 
-
-        getElement(
-            "categoryFilter"
-        ).addEventListener(
-            "change",
-            function () {
-
-                startGame();
-
-            }
-        );
-
-        document.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key !== "Enter") {
-            return;
         }
 
-        event.preventDefault();
 
-        // Si la question est déjà validée
-        if (answered) {
+        function renderCategoryCards() {
 
-            if (
-                !document
-                    .getElementById("nextButton")
-                    .classList.contains("hidden")
-            ) {
-                nextCard();
-            }
+            const counts = {};
 
-            return;
+            state.allWords.forEach(
+                function(word) {
+
+                    if (!counts[word.category]) {
+
+                        counts[word.category] =
+                            0;
+
+                    }
+
+                    counts[word.category] +=
+                        1;
+
+                }
+            );
+
+
+            const categories =
+                Object.keys(
+                    counts
+                ).sort(
+                    function(first, second) {
+
+                        return first.localeCompare(
+                            second,
+                            "fr"
+                        );
+
+                    }
+                );
+
+
+            const categoryItems = [
+
+                {
+                    name:
+                        "Toutes",
+
+                    label:
+                        "Toutes les catégories",
+
+                    count:
+                        state.allWords.length,
+
+                    icon:
+                        "📚"
+                },
+
+                ...categories.map(
+                    function(categoryName) {
+
+                        return {
+
+                            name:
+                                categoryName,
+
+                            label:
+                                categoryName,
+
+                            count:
+                                counts[
+                                    categoryName
+                                ],
+
+                            icon:
+                                categoryIcons[
+                                    categoryName
+                                ]
+                                || "📘"
+                        };
+
+                    }
+                )
+
+            ];
+
+
+            getElement(
+                "categoryCards"
+            ).innerHTML =
+                categoryItems.map(
+                    function(item) {
+
+                        const selectedClass =
+                            item.name
+                            === state.selectedCategory
+                            ? "selected"
+                            : "";
+
+                        const plural =
+                            item.count > 1
+                            ? "s"
+                            : "";
+
+                        return `
+                            <button
+                                class="choice-card ${selectedClass}"
+                                data-category="${escapeHtml(item.name)}"
+                            >
+
+                                <span class="check">
+                                    ✓
+                                </span>
+
+                                <span class="icon">
+                                    ${item.icon}
+                                </span>
+
+                                <strong>
+                                    ${escapeHtml(item.label)}
+                                </strong>
+
+                                <small>
+                                    ${item.count} mot${plural}
+                                </small>
+
+                            </button>
+                        `;
+
+                    }
+                ).join("");
+
+
+            document
+                .querySelectorAll(
+                    "[data-category]"
+                )
+                .forEach(
+                    function(button) {
+
+                        button.addEventListener(
+                            "click",
+                            function() {
+
+                                state.selectedCategory =
+                                    button.dataset.category;
+
+                                renderCategoryCards();
+
+                            }
+                        );
+
+                    }
+                );
+
         }
 
-        // Sinon valide la réponse
-        document
-            .getElementById("answerForm")
-            .requestSubmit();
 
-    }
-);
-
-        if ("serviceWorker" in navigator) {
-
-    navigator.serviceWorker
-        .register("./service-worker.js")
-        .catch(error => {
-            console.error(error);
-        });
-
-}
-
-        loadExcel();
-
-    </script>
-
-</body>
-
-</html>
+        function selectChoice(
+            containerId,
+         
