@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -38,7 +36,6 @@
     <title>English Memo</title>
 
     <style>
-
         :root {
             --background: #020617;
             --panel: #0f172a;
@@ -56,9 +53,13 @@
             box-sizing: border-box;
         }
 
+        html {
+            min-height: 100%;
+            background: var(--background);
+        }
+
         body {
             margin: 0;
-
             min-height: 100vh;
 
             background:
@@ -86,126 +87,88 @@
             cursor: pointer;
         }
 
+        button:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
         .application {
-            width:
-                min(
-                    900px,
-                    calc(100% - 28px)
-                );
+            width: min(
+                900px,
+                calc(100% - 28px)
+            );
 
             margin: auto;
 
             padding:
-                calc(
-                    24px
-                    + env(safe-area-inset-top)
-                )
+                calc(24px + env(safe-area-inset-top))
                 0
-                calc(
-                    42px
-                    + env(safe-area-inset-bottom)
-                );
+                calc(42px + env(safe-area-inset-bottom));
         }
 
         .brand {
-            margin:
-                0
-                0
-                7px;
+            margin: 0 0 7px;
 
-            color:
-                var(--cyan);
+            color: var(--cyan);
 
-            font-size:
-                0.78rem;
+            font-size: 0.78rem;
+            font-weight: 800;
 
-            font-weight:
-                800;
-
-            letter-spacing:
-                0.16em;
-
-            text-transform:
-                uppercase;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
         }
 
         h1 {
             margin: 0;
 
-            font-size:
-                clamp(
-                    2rem,
-                    7vw,
-                    3.25rem
-                );
+            font-size: clamp(
+                2rem,
+                7vw,
+                3.25rem
+            );
         }
 
         h2 {
-            margin:
-                0
-                0
-                10px;
+            margin: 0 0 10px;
         }
 
         .muted {
-            color:
-                var(--muted);
+            color: var(--muted);
         }
 
         .hidden {
-            display:
-                none !important;
+            display: none !important;
         }
 
         .screen {
-            animation:
-                appear
-                0.2s
-                ease;
+            animation: appear 0.2s ease;
         }
 
         @keyframes appear {
-
             from {
                 opacity: 0;
-
-                transform:
-                    translateY(
-                        6px
-                    );
+                transform: translateY(6px);
             }
 
             to {
                 opacity: 1;
-
-                transform:
-                    translateY(
-                        0
-                    );
+                transform: translateY(0);
             }
         }
 
         .panel {
-            margin-top:
-                18px;
+            margin-top: 18px;
+            padding: 20px;
 
-            padding:
-                20px;
+            border: 1px solid var(--border);
+            border-radius: 26px;
 
-            border:
-                1px solid
-                var(--border);
-
-            border-radius:
-                26px;
-
-            background:
-                rgba(
-                    15,
-                    23,
-                    42,
-                    0.96
-                );
+            background: rgba(
+                15,
+                23,
+                42,
+                0.96
+            );
 
             box-shadow:
                 0
@@ -220,79 +183,52 @@
         }
 
         .section-title {
-            margin:
-                0
-                0
-                12px;
-
-            font-size:
-                1.05rem;
+            margin: 0 0 12px;
+            font-size: 1.05rem;
         }
 
         .selection-grid {
-            display:
-                grid;
+            display: grid;
 
             grid-template-columns:
                 repeat(
                     auto-fit,
-                    minmax(
-                        160px,
-                        1fr
-                    )
+                    minmax(160px, 1fr)
                 );
 
-            gap:
-                11px;
+            gap: 11px;
         }
 
         .choice-card {
-            position:
-                relative;
+            position: relative;
 
-            min-height:
-                96px;
+            min-height: 96px;
 
-            padding:
-                16px;
+            padding: 16px;
 
-            border:
-                1px solid
-                var(--border);
+            border: 1px solid var(--border);
+            border-radius: 20px;
 
-            border-radius:
-                20px;
+            background: var(--panel-light);
+            color: var(--text);
 
-            background:
-                var(--panel-light);
-
-            color:
-                var(--text);
-
-            text-align:
-                left;
+            text-align: left;
 
             transition:
-                0.16s;
+                transform 0.16s,
+                border-color 0.16s,
+                background 0.16s;
         }
 
         .choice-card:hover {
-            border-color:
-                #46617f;
-
-            transform:
-                translateY(
-                    -2px
-                );
+            border-color: #46617f;
+            transform: translateY(-2px);
         }
 
         .choice-card.selected {
-            border:
-                2px solid
-                var(--cyan);
+            border: 2px solid var(--cyan);
 
-            background:
-                #123247;
+            background: #123247;
 
             box-shadow:
                 0
@@ -308,272 +244,174 @@
         }
 
         .choice-card .icon {
-            display:
-                block;
+            display: block;
 
-            margin-bottom:
-                5px;
+            margin-bottom: 5px;
 
-            font-size:
-                1.55rem;
+            font-size: 1.55rem;
         }
 
         .choice-card strong {
-            display:
-                block;
+            display: block;
         }
 
         .choice-card small {
-            display:
-                block;
+            display: block;
 
-            margin-top:
-                5px;
+            margin-top: 5px;
 
-            color:
-                var(--muted);
+            color: var(--muted);
         }
 
         .choice-card .check {
-            display:
-                none;
+            display: none;
 
-            position:
-                absolute;
+            position: absolute;
 
-            top:
-                9px;
+            top: 9px;
+            right: 11px;
 
-            right:
-                11px;
-
-            color:
-                var(--cyan);
+            color: var(--cyan);
         }
 
         .choice-card.selected .check {
-            display:
-                block;
+            display: block;
         }
 
         .choice-card.compact {
-            min-height:
-                68px;
-
-            text-align:
-                center;
+            min-height: 68px;
+            text-align: center;
         }
 
         .button {
-            padding:
-                12px
-                17px;
+            padding: 12px 17px;
 
-            border:
-                1px solid
-                var(--border);
+            border: 1px solid var(--border);
+            border-radius: 15px;
 
-            border-radius:
-                15px;
+            background: var(--panel-light);
+            color: var(--text);
 
-            background:
-                var(--panel-light);
-
-            color:
-                var(--text);
-
-            font-weight:
-                800;
+            font-weight: 800;
         }
 
-        .button:hover {
-            filter:
-                brightness(
-                    1.12
-                );
+        .button:hover:not(:disabled) {
+            filter: brightness(1.12);
         }
 
         .button.primary {
-            border-color:
-                var(--cyan);
+            border-color: var(--cyan);
 
-            background:
-                var(--cyan);
-
-            color:
-                #05202a;
+            background: var(--cyan);
+            color: #05202a;
         }
 
         .button.light {
-            background:
-                white;
-
-            color:
-                #0f172a;
+            background: white;
+            color: #0f172a;
         }
 
         .button.danger {
-            border-color:
-                var(--red);
-
-            color:
-                #fecdd3;
+            border-color: var(--red);
+            color: #fecdd3;
         }
 
         .button.full {
-            width:
-                100%;
+            width: 100%;
+            min-height: 52px;
 
-            min-height:
-                52px;
-
-            margin-top:
-                17px;
+            margin-top: 17px;
         }
 
         .status {
-            min-height:
-                22px;
+            min-height: 22px;
 
-            margin-top:
-                12px;
+            margin: 12px 0 0;
 
-            color:
-                var(--muted);
+            color: var(--muted);
         }
 
         .game-header {
-            display:
-                flex;
+            display: flex;
 
-            align-items:
-                center;
+            align-items: center;
+            justify-content: space-between;
 
-            justify-content:
-                space-between;
+            gap: 10px;
 
-            gap:
-                10px;
-
-            margin-bottom:
-                14px;
+            margin-bottom: 14px;
         }
 
         .statistics {
-            display:
-                grid;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
 
-            grid-template-columns:
-                repeat(
-                    3,
-                    1fr
-                );
-
-            gap:
-                9px;
+            gap: 9px;
         }
 
         .statistic {
-            padding:
-                10px;
+            padding: 10px;
 
-            border:
-                1px solid
-                #18243a;
+            border: 1px solid #18243a;
+            border-radius: 16px;
 
-            border-radius:
-                16px;
+            background: var(--panel);
 
-            background:
-                var(--panel);
-
-            text-align:
-                center;
+            text-align: center;
         }
 
         .statistic small {
-            display:
-                block;
-
-            color:
-                var(--muted);
+            display: block;
+            color: var(--muted);
         }
 
         .statistic strong {
-            font-size:
-                1.25rem;
+            font-size: 1.25rem;
         }
 
         .green {
-            color:
-                var(--green);
+            color: var(--green);
         }
 
         .red {
-            color:
-                var(--red);
+            color: var(--red);
         }
 
         .progress {
-            height:
-                8px;
+            height: 8px;
 
-            margin:
-                12px
-                0
-                17px;
+            margin: 12px 0 17px;
 
-            overflow:
-                hidden;
+            overflow: hidden;
 
-            border-radius:
-                999px;
-
-            background:
-                #1e293b;
+            border-radius: 999px;
+            background: #1e293b;
         }
 
         .progress div {
-            width:
-                0;
+            width: 0;
+            height: 100%;
 
-            height:
-                100%;
+            background: var(--cyan);
 
-            background:
-                var(--cyan);
-
-            transition:
-                width
-                0.25s;
+            transition: width 0.25s;
         }
 
         .flashcard {
-            min-height:
-                410px;
+            min-height: 410px;
 
-            display:
-                flex;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
-            flex-direction:
-                column;
+            padding: clamp(
+                24px,
+                6vw,
+                48px
+            );
 
-            justify-content:
-                center;
-
-            padding:
-                clamp(
-                    24px,
-                    6vw,
-                    48px
-                );
-
-            border:
-                1px solid
-                var(--border);
-
-            border-radius:
-                30px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
 
             background:
                 linear-gradient(
@@ -595,95 +433,60 @@
         }
 
         .instruction {
-            color:
-                var(--muted);
+            color: var(--muted);
 
-            text-align:
-                center;
+            text-align: center;
 
-            font-size:
-                0.8rem;
+            font-size: 0.8rem;
+            font-weight: 800;
 
-            font-weight:
-                800;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                0.12em;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
         }
 
         .prompt {
-            margin:
-                15px
-                0
-                8px;
+            margin: 15px 0 8px;
 
-            text-align:
-                center;
+            text-align: center;
 
-            font-size:
-                clamp(
-                    2.2rem,
-                    9vw,
-                    4.4rem
-                );
+            font-size: clamp(
+                2.2rem,
+                9vw,
+                4.4rem
+            );
 
-            line-height:
-                1.08;
+            line-height: 1.08;
         }
 
         .category {
-            margin:
-                0
-                0
-                32px;
+            margin: 0 0 32px;
 
-            color:
-                var(--cyan);
+            color: var(--cyan);
 
-            text-align:
-                center;
+            text-align: center;
         }
 
         .answer {
-            width:
-                100%;
+            width: 100%;
+            height: 58px;
 
-            height:
-                58px;
+            padding: 0 14px;
 
-            padding:
-                0
-                14px;
+            border: 2px solid var(--border);
+            border-radius: 16px;
 
-            border:
-                2px solid
-                var(--border);
+            outline: none;
 
-            border-radius:
-                16px;
+            background: #030a16;
+            color: white;
 
-            outline:
-                none;
+            text-align: center;
 
-            background:
-                #030a16;
-
-            color:
-                white;
-
-            text-align:
-                center;
-
-            font-size:
-                1.15rem;
+            font-size: 1.15rem;
         }
 
         .answer:focus {
-            border-color:
-                var(--cyan);
+            border-color: var(--cyan);
 
             box-shadow:
                 0
@@ -699,28 +502,19 @@
         }
 
         .feedback {
-            display:
-                none;
+            display: none;
 
-            margin-top:
-                12px;
+            margin-top: 12px;
+            padding: 14px;
 
-            padding:
-                14px;
+            border-radius: 15px;
 
-            border-radius:
-                15px;
-
-            text-align:
-                center;
-
-            font-weight:
-                800;
+            text-align: center;
+            font-weight: 800;
         }
 
         .feedback.correct {
-            display:
-                block;
+            display: block;
 
             background:
                 rgba(
@@ -730,13 +524,11 @@
                     0.1
                 );
 
-            color:
-                var(--green);
+            color: var(--green);
         }
 
         .feedback.incorrect {
-            display:
-                block;
+            display: block;
 
             background:
                 rgba(
@@ -746,180 +538,123 @@
                     0.1
                 );
 
-            color:
-                var(--red);
+            color: var(--red);
         }
 
         .game-actions {
-            display:
-                flex;
+            display: flex;
 
-            gap:
-                10px;
+            gap: 10px;
 
-            margin-top:
-                12px;
+            margin-top: 12px;
         }
 
         .game-actions .button {
-            flex:
-                1;
+            flex: 1;
         }
 
         .result-hero {
-            padding:
-                22px;
-
-            text-align:
-                center;
+            padding: 22px;
+            text-align: center;
         }
 
         .result-percent {
-            font-size:
-                clamp(
-                    3.5rem,
-                    15vw,
-                    6.5rem
-                );
+            font-size: clamp(
+                3.5rem,
+                15vw,
+                6.5rem
+            );
 
-            font-weight:
-                900;
-
-            line-height:
-                1;
+            font-weight: 900;
+            line-height: 1;
         }
 
         .result-grid {
-            display:
-                grid;
+            display: grid;
 
             grid-template-columns:
                 repeat(
                     auto-fit,
-                    minmax(
-                        135px,
-                        1fr
-                    )
+                    minmax(135px, 1fr)
                 );
 
-            gap:
-                10px;
+            gap: 10px;
 
-            margin-top:
-                18px;
+            margin-top: 18px;
         }
 
         .result-card {
-            padding:
-                14px;
+            padding: 14px;
 
-            border:
-                1px solid
-                var(--border);
+            border: 1px solid var(--border);
+            border-radius: 17px;
 
-            border-radius:
-                17px;
+            background: #07101f;
 
-            background:
-                #07101f;
-
-            text-align:
-                center;
+            text-align: center;
         }
 
         .result-card strong {
-            display:
-                block;
+            display: block;
 
-            font-size:
-                1.5rem;
+            font-size: 1.5rem;
         }
 
         .category-result {
-            margin-top:
-                10px;
+            margin-top: 10px;
+            padding: 14px;
 
-            padding:
-                14px;
+            border-radius: 17px;
 
-            border-radius:
-                17px;
-
-            background:
-                #07101f;
+            background: #07101f;
         }
 
         .category-result-line {
-            display:
-                flex;
+            display: flex;
 
-            justify-content:
-                space-between;
+            justify-content: space-between;
 
-            gap:
-                10px;
+            gap: 10px;
         }
 
         .mini-progress {
-            height:
-                7px;
+            height: 7px;
 
-            margin-top:
-                9px;
+            margin-top: 9px;
 
-            overflow:
-                hidden;
+            overflow: hidden;
 
-            border-radius:
-                999px;
-
-            background:
-                #1e293b;
+            border-radius: 999px;
+            background: #1e293b;
         }
 
         .mini-progress div {
-            height:
-                100%;
+            height: 100%;
         }
 
         .result-actions {
-            display:
-                grid;
+            display: grid;
 
             grid-template-columns:
-                repeat(
-                    2,
-                    1fr
-                );
+                repeat(2, 1fr);
 
-            gap:
-                10px;
+            gap: 10px;
 
-            margin-top:
-                18px;
+            margin-top: 18px;
         }
 
         .dialog {
-            position:
-                fixed;
+            position: fixed;
+            inset: 0;
 
-            inset:
-                0;
+            z-index: 20;
 
-            z-index:
-                20;
+            display: flex;
 
-            display:
-                flex;
+            align-items: center;
+            justify-content: center;
 
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            padding:
-                20px;
+            padding: 20px;
 
             background:
                 rgba(
@@ -931,99 +666,72 @@
         }
 
         .dialog-box {
-            width:
-                min(
-                    420px,
-                    100%
-                );
+            width: min(
+                420px,
+                100%
+            );
 
-            padding:
-                22px;
+            padding: 22px;
 
-            border:
-                1px solid
-                var(--border);
+            border: 1px solid var(--border);
+            border-radius: 24px;
 
-            border-radius:
-                24px;
-
-            background:
-                var(--panel);
+            background: var(--panel);
         }
 
         .dialog-actions {
-            display:
-                flex;
+            display: flex;
 
-            gap:
-                10px;
+            gap: 10px;
 
-            margin-top:
-                18px;
+            margin-top: 18px;
         }
 
         .dialog-actions button {
-            flex:
-                1;
+            flex: 1;
         }
 
-        @media (
-            max-width:
-            620px
-        ) {
-
+        @media (max-width: 620px) {
             .application {
-                width:
-                    min(
-                        calc(100% - 20px),
-                        900px
-                    );
+                width: min(
+                    calc(100% - 20px),
+                    900px
+                );
             }
 
             .selection-grid {
                 grid-template-columns:
-                    repeat(
-                        2,
-                        1fr
-                    );
+                    repeat(2, 1fr);
             }
 
             .choice-card {
-                min-height:
-                    90px;
-
-                padding:
-                    13px;
+                min-height: 90px;
+                padding: 13px;
             }
 
             .game-header {
-                align-items:
-                    stretch;
-
-                flex-direction:
-                    column;
+                align-items: stretch;
+                flex-direction: column;
             }
 
             .result-actions {
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
 
             .flashcard {
-                min-height:
-                    390px;
+                min-height: 390px;
             }
         }
-
     </style>
-
 </head>
 
 <body>
 
     <main class="application">
 
-        <!-- ÉCRAN D'ACCUEIL -->
+        <!-- ==================================================
+             ÉCRAN D'ACCUEIL
+        =================================================== -->
 
         <section
             id="homeScreen"
@@ -1042,7 +750,6 @@
                 Choisis une catégorie, un sens et un nombre de cartes.
             </p>
 
-
             <div class="panel">
 
                 <h2 class="section-title">
@@ -1055,7 +762,6 @@
                 ></div>
 
             </div>
-
 
             <div class="panel">
 
@@ -1072,7 +778,6 @@
                         class="choice-card compact selected"
                         data-direction="fr-en"
                     >
-
                         <span class="check">
                             ✓
                         </span>
@@ -1080,15 +785,12 @@
                         <strong>
                             Français → Anglais
                         </strong>
-
                     </button>
-
 
                     <button
                         class="choice-card compact"
                         data-direction="en-fr"
                     >
-
                         <span class="check">
                             ✓
                         </span>
@@ -1096,13 +798,11 @@
                         <strong>
                             Anglais → Français
                         </strong>
-
                     </button>
 
                 </div>
 
             </div>
-
 
             <div class="panel">
 
@@ -1119,7 +819,6 @@
                         class="choice-card compact selected"
                         data-size="10"
                     >
-
                         <span class="check">
                             ✓
                         </span>
@@ -1127,15 +826,12 @@
                         <strong>
                             10 cartes
                         </strong>
-
                     </button>
-
 
                     <button
                         class="choice-card compact"
                         data-size="20"
                     >
-
                         <span class="check">
                             ✓
                         </span>
@@ -1143,15 +839,12 @@
                         <strong>
                             20 cartes
                         </strong>
-
                     </button>
-
 
                     <button
                         class="choice-card compact"
                         data-size="50"
                     >
-
                         <span class="check">
                             ✓
                         </span>
@@ -1159,15 +852,12 @@
                         <strong>
                             50 cartes
                         </strong>
-
                     </button>
-
 
                     <button
                         class="choice-card compact"
                         data-size="all"
                     >
-
                         <span class="check">
                             ✓
                         </span>
@@ -1175,15 +865,12 @@
                         <strong>
                             Toutes
                         </strong>
-
                     </button>
-
 
                     <button
                         class="choice-card compact"
                         data-size="infinite"
                     >
-
                         <span class="check">
                             ✓
                         </span>
@@ -1191,11 +878,9 @@
                         <strong>
                             ∞ Infini
                         </strong>
-
                     </button>
 
                 </div>
-
 
                 <button
                     id="startButton"
@@ -1204,7 +889,6 @@
                 >
                     Commencer la session
                 </button>
-
 
                 <p
                     id="loadStatus"
@@ -1218,7 +902,9 @@
         </section>
 
 
-        <!-- ÉCRAN DE JEU -->
+        <!-- ==================================================
+             ÉCRAN DE JEU
+        =================================================== -->
 
         <section
             id="gameScreen"
@@ -1228,7 +914,6 @@
             <div class="game-header">
 
                 <div>
-
                     <p class="brand">
                         English Memo
                     </p>
@@ -1236,9 +921,7 @@
                     <h2 id="sessionTitle">
                         Révision
                     </h2>
-
                 </div>
-
 
                 <button
                     id="quitButton"
@@ -1249,11 +932,9 @@
 
             </div>
 
-
             <div class="statistics">
 
                 <div class="statistic">
-
                     <small id="counterLabel">
                         Carte
                     </small>
@@ -1261,12 +942,9 @@
                     <strong id="counter">
                         1 / 10
                     </strong>
-
                 </div>
 
-
                 <div class="statistic">
-
                     <small>
                         Score
                     </small>
@@ -1277,12 +955,9 @@
                     >
                         0
                     </strong>
-
                 </div>
 
-
                 <div class="statistic">
-
                     <small>
                         Erreurs
                     </small>
@@ -1293,21 +968,16 @@
                     >
                         0
                     </strong>
-
                 </div>
 
             </div>
-
 
             <div
                 id="progress"
                 class="progress"
             >
-
                 <div id="progressBar"></div>
-
             </div>
-
 
             <article class="flashcard">
 
@@ -1326,14 +996,15 @@
                     class="category"
                 ></p>
 
-
                 <form id="answerForm">
 
                     <input
                         id="answerInput"
                         class="answer"
+                        type="text"
                         autocomplete="off"
                         autocapitalize="none"
+                        spellcheck="false"
                         placeholder="Écris ta réponse ici..."
                     >
 
@@ -1347,18 +1018,17 @@
 
                 </form>
 
-
                 <div
                     id="feedback"
                     class="feedback"
                 ></div>
-
 
                 <div class="game-actions">
 
                     <button
                         id="nextButton"
                         class="button light hidden"
+                        type="button"
                     >
                         Carte suivante →
                     </button>
@@ -1370,7 +1040,9 @@
         </section>
 
 
-        <!-- ÉCRAN DE BILAN -->
+        <!-- ==================================================
+             ÉCRAN DE BILAN
+        =================================================== -->
 
         <section
             id="resultScreen"
@@ -1384,7 +1056,6 @@
             <h1>
                 Bilan de la session
             </h1>
-
 
             <div class="panel result-hero">
 
@@ -1400,11 +1071,9 @@
                     class="muted"
                 ></p>
 
-
                 <div class="result-grid">
 
                     <div class="result-card">
-
                         <strong id="resultQuestions">
                             0
                         </strong>
@@ -1412,12 +1081,9 @@
                         <span>
                             questions
                         </span>
-
                     </div>
 
-
                     <div class="result-card">
-
                         <strong
                             id="resultCorrect"
                             class="green"
@@ -1428,12 +1094,9 @@
                         <span>
                             bonnes réponses
                         </span>
-
                     </div>
 
-
                     <div class="result-card">
-
                         <strong
                             id="resultErrors"
                             class="red"
@@ -1444,12 +1107,9 @@
                         <span>
                             erreurs
                         </span>
-
                     </div>
 
-
                     <div class="result-card">
-
                         <strong id="resultUnique">
                             0
                         </strong>
@@ -1457,13 +1117,11 @@
                         <span>
                             mots différents
                         </span>
-
                     </div>
 
                 </div>
 
             </div>
-
 
             <div class="panel">
 
@@ -1475,28 +1133,28 @@
 
             </div>
 
-
             <div class="result-actions">
 
                 <button
                     id="replayButton"
                     class="button primary"
+                    type="button"
                 >
                     Rejouer avec les mêmes paramètres
                 </button>
 
-
                 <button
                     id="reviewErrorsButton"
                     class="button"
+                    type="button"
                 >
                     Revoir uniquement les erreurs
                 </button>
 
-
                 <button
                     id="homeButton"
                     class="button"
+                    type="button"
                 >
                     Retour à l'accueil
                 </button>
@@ -1508,7 +1166,9 @@
     </main>
 
 
-    <!-- FENÊTRE DE CONFIRMATION -->
+    <!-- ======================================================
+         FENÊTRE DE CONFIRMATION
+    ======================================================= -->
 
     <div
         id="quitDialog"
@@ -1525,20 +1185,20 @@
                 Les réponses déjà données seront utilisées pour établir le bilan.
             </p>
 
-
             <div class="dialog-actions">
 
                 <button
                     id="continueButton"
                     class="button"
+                    type="button"
                 >
                     Continuer
                 </button>
 
-
                 <button
                     id="confirmQuitButton"
                     class="button danger"
+                    type="button"
                 >
                     Voir le bilan
                 </button>
@@ -1551,92 +1211,58 @@
 
 
     <script>
+        /* =====================================================
+           ÉTAT DE L'APPLICATION
+        ====================================================== */
 
         const state = {
-
             allWords: [],
-
-            selectedCategory:
-                "Toutes",
-
-            direction:
-                "fr-en",
-
-            size:
-                "10",
+            selectedCategory: "Toutes",
+            direction: "fr-en",
+            size: "10",
 
             deck: [],
+            index: 0,
+            cycleIndex: 0,
 
-            index:
-                0,
+            current: null,
+            answered: false,
 
-            cycleIndex:
-                0,
-
-            current:
-                null,
-
-            answered:
-                false,
-
-            correct:
-                0,
-
-            errors:
-                0,
+            correct: 0,
+            errors: 0,
 
             results: [],
+            mistakes: new Map(),
 
-            mistakes:
-                new Map(),
-
-            reviewPool:
-                null,
-
-            lastSettings:
-                null
+            reviewPool: null,
+            lastSettings: null
         };
 
 
         const categoryIcons = {
-
-            "Verbes":
-                "🔤",
-
-            "Verbe":
-                "🔤",
-
-            "Connecteurs":
-                "🔗",
-
-            "Expressions":
-                "💬",
-
-            "Travail":
-                "💼",
-
-            "Énergie":
-                "⚡",
-
-            "Sans catégorie":
-                "📁"
+            "Verbe": "🔤",
+            "Verbes": "🔤",
+            "Connecteur": "🔗",
+            "Connecteurs": "🔗",
+            "Expression": "💬",
+            "Expressions": "💬",
+            "Travail": "💼",
+            "Énergie": "⚡",
+            "Sans catégorie": "📁"
         };
 
 
+        /* =====================================================
+           OUTILS
+        ====================================================== */
+
         function getElement(id) {
-
-            return document.getElementById(
-                id
-            );
-
+            return document.getElementById(id);
         }
 
 
         function normalize(text) {
-
-            return String(
-                text ?? ""
-            )
+            return String(text ?? "")
                 .toLowerCase()
                 .normalize("NFD")
                 .replace(
@@ -1652,29 +1278,21 @@
                     /\s+/g,
                     " "
                 );
-
         }
 
 
         function shuffle(items) {
-
-            const copy =
-                [...items];
+            const copy = [...items];
 
             for (
-                let index =
-                    copy.length - 1;
-
+                let index = copy.length - 1;
                 index > 0;
-
                 index -= 1
             ) {
-
-                const randomIndex =
-                    Math.floor(
-                        Math.random()
-                        * (index + 1)
-                    );
+                const randomIndex = Math.floor(
+                    Math.random()
+                    * (index + 1)
+                );
 
                 [
                     copy[index],
@@ -1683,33 +1301,24 @@
                     copy[randomIndex],
                     copy[index]
                 ];
-
             }
 
             return copy;
-
         }
 
 
         function escapeHtml(text) {
-
             const element =
-                document.createElement(
-                    "div"
-                );
+                document.createElement("div");
 
             element.textContent =
-                text;
+                String(text ?? "");
 
             return element.innerHTML;
-
         }
 
 
-        function showScreen(
-            screenId
-        ) {
-
+        function showScreen(screenId) {
             const screens = [
                 "homeScreen",
                 "gameScreen",
@@ -1718,23 +1327,16 @@
 
             screens.forEach(
                 function(screenName) {
-
                     getElement(
                         screenName
                     ).classList.toggle(
                         "hidden",
-                        screenName
-                        !== screenId
+                        screenName !== screenId
                     );
-
                 }
             );
 
-            window.scrollTo(
-                0,
-                0
-            );
-
+            window.scrollTo(0, 0);
         }
 
 
@@ -1742,7 +1344,6 @@
             correct,
             total
         ) {
-
             if (!total) {
                 return 0;
             }
@@ -1752,14 +1353,10 @@
                 / total
                 * 100
             );
-
         }
 
 
-        function getResultColor(
-            result
-        ) {
-
+        function getResultColor(result) {
             if (result >= 90) {
                 return "var(--green)";
             }
@@ -1773,27 +1370,25 @@
             }
 
             return "var(--red)";
-
         }
 
 
+        /* =====================================================
+           CHARGEMENT DU VOCABULAIRE
+        ====================================================== */
+
         async function loadVocabulary() {
-
             try {
-
-                const response =
-                    await fetch(
-                        "./vocabulaire.json?version="
-                        + Date.now()
-                    );
+                const response = await fetch(
+                    "./vocabulaire.json?version="
+                    + Date.now()
+                );
 
                 if (!response.ok) {
-
                     throw new Error(
                         "Erreur HTTP "
                         + response.status
                     );
-
                 }
 
                 const data =
@@ -1803,47 +1398,41 @@
                     !Array.isArray(data)
                     || data.length === 0
                 ) {
-
                     throw new Error(
                         "Le fichier vocabulaire.json "
                         + "est vide ou invalide."
                     );
-
                 }
 
-                state.allWords =
-                    data.map(
-                        function(word, index) {
+                state.allWords = data.map(
+                    function(word, index) {
+                        return {
+                            ...word,
 
-                            return {
+                            id:
+                                word.id
+                                ?? index + 1,
 
-                                ...word,
+                            category:
+                                word.category
+                                || "Sans catégorie",
 
-                                id:
-                                    word.id
-                                    ?? index + 1,
+                            french_answers:
+                                Array.isArray(
+                                    word.french_answers
+                                )
+                                ? word.french_answers
+                                : [word.french],
 
-                                category:
-                                    word.category
-                                    || "Sans catégorie",
-
-                                french_answers:
-                                    Array.isArray(
-                                        word.french_answers
-                                    )
-                                    ? word.french_answers
-                                    : [word.french],
-
-                                english_answers:
-                                    Array.isArray(
-                                        word.english_answers
-                                    )
-                                    ? word.english_answers
-                                    : [word.english]
-                            };
-
-                        }
-                    );
+                            english_answers:
+                                Array.isArray(
+                                    word.english_answers
+                                )
+                                ? word.english_answers
+                                : [word.english]
+                        };
+                    }
+                );
 
                 getElement(
                     "loadStatus"
@@ -1859,7 +1448,6 @@
                 renderCategoryCards();
 
             } catch (error) {
-
                 getElement(
                     "loadStatus"
                 ).textContent =
@@ -1871,68 +1459,53 @@
                 ).disabled =
                     true;
 
+                console.error(error);
             }
-
         }
 
 
-        function renderCategoryCards() {
+        /* =====================================================
+           CRÉATION AUTOMATIQUE DES CATÉGORIES
+        ====================================================== */
 
+        function renderCategoryCards() {
             const counts = {};
 
             state.allWords.forEach(
                 function(word) {
+                    const category =
+                        word.category
+                        || "Sans catégorie";
 
-                    if (!counts[word.category]) {
-
-                        counts[word.category] =
-                            0;
-
-                    }
-
-                    counts[word.category] +=
-                        1;
-
+                    counts[category] =
+                        (counts[category] || 0)
+                        + 1;
                 }
             );
 
-
             const categories =
-                Object.keys(
-                    counts
-                ).sort(
+                Object.keys(counts).sort(
                     function(first, second) {
-
                         return first.localeCompare(
                             second,
                             "fr"
                         );
-
                     }
                 );
 
-
             const categoryItems = [
-
                 {
-                    name:
-                        "Toutes",
-
+                    name: "Toutes",
                     label:
                         "Toutes les catégories",
-
                     count:
                         state.allWords.length,
-
-                    icon:
-                        "📚"
+                    icon: "📚"
                 },
 
                 ...categories.map(
                     function(categoryName) {
-
                         return {
-
                             name:
                                 categoryName,
 
@@ -1950,19 +1523,15 @@
                                 ]
                                 || "📘"
                         };
-
                     }
                 )
-
             ];
-
 
             getElement(
                 "categoryCards"
             ).innerHTML =
                 categoryItems.map(
                     function(item) {
-
                         const selectedClass =
                             item.name
                             === state.selectedCategory
@@ -1978,8 +1547,8 @@
                             <button
                                 class="choice-card ${selectedClass}"
                                 data-category="${escapeHtml(item.name)}"
+                                type="button"
                             >
-
                                 <span class="check">
                                     ✓
                                 </span>
@@ -1995,13 +1564,10 @@
                                 <small>
                                     ${item.count} mot${plural}
                                 </small>
-
                             </button>
                         `;
-
                     }
                 ).join("");
-
 
             document
                 .querySelectorAll(
@@ -2009,25 +1575,1079 @@
                 )
                 .forEach(
                     function(button) {
-
                         button.addEventListener(
                             "click",
                             function() {
-
                                 state.selectedCategory =
                                     button.dataset.category;
 
                                 renderCategoryCards();
-
                             }
                         );
-
                     }
                 );
-
         }
 
 
         function selectChoice(
             containerId,
-         
+            attribute,
+            value
+        ) {
+            document
+                .querySelectorAll(
+                    "#"
+                    + containerId
+                    + " ["
+                    + attribute
+                    + "]"
+                )
+                .forEach(
+                    function(button) {
+                        button.classList.toggle(
+                            "selected",
+                            button.getAttribute(
+                                attribute
+                            ) === value
+                        );
+                    }
+                );
+        }
+
+
+        /* =====================================================
+           SÉLECTION DES PARAMÈTRES
+        ====================================================== */
+
+        document
+            .querySelectorAll(
+                "[data-direction]"
+            )
+            .forEach(
+                function(button) {
+                    button.addEventListener(
+                        "click",
+                        function() {
+                            state.direction =
+                                button.dataset.direction;
+
+                            selectChoice(
+                                "directionCards",
+                                "data-direction",
+                                state.direction
+                            );
+                        }
+                    );
+                }
+            );
+
+
+        document
+            .querySelectorAll(
+                "[data-size]"
+            )
+            .forEach(
+                function(button) {
+                    button.addEventListener(
+                        "click",
+                        function() {
+                            state.size =
+                                button.dataset.size;
+
+                            selectChoice(
+                                "sizeCards",
+                                "data-size",
+                                state.size
+                            );
+                        }
+                    );
+                }
+            );
+
+
+        /* =====================================================
+           CRÉATION D'UNE SESSION
+        ====================================================== */
+
+        function getSelectedPool() {
+            if (state.reviewPool) {
+                return [
+                    ...state.reviewPool
+                ];
+            }
+
+            if (
+                state.selectedCategory
+                === "Toutes"
+            ) {
+                return [
+                    ...state.allWords
+                ];
+            }
+
+            return state.allWords.filter(
+                function(word) {
+                    return (
+                        word.category
+                        === state.selectedCategory
+                    );
+                }
+            );
+        }
+
+
+        function isInfiniteMode() {
+            return (
+                !state.reviewPool
+                && state.size === "infinite"
+            );
+        }
+
+
+        function startSession() {
+            const pool =
+                getSelectedPool();
+
+            if (pool.length === 0) {
+                return;
+            }
+
+            state.correct = 0;
+            state.errors = 0;
+
+            state.results = [];
+            state.mistakes = new Map();
+
+            state.index = 0;
+            state.cycleIndex = 0;
+
+            state.current = null;
+            state.answered = false;
+
+            const infiniteMode =
+                isInfiniteMode();
+
+            let selectedWords;
+
+            if (state.reviewPool) {
+                selectedWords =
+                    shuffle(pool);
+
+            } else if (
+                infiniteMode
+                || state.size === "all"
+            ) {
+                selectedWords =
+                    shuffle(pool);
+
+            } else {
+                const requestedSize =
+                    Number(state.size);
+
+                selectedWords =
+                    shuffle(pool).slice(
+                        0,
+                        Math.min(
+                            requestedSize,
+                            pool.length
+                        )
+                    );
+            }
+
+            state.deck =
+                selectedWords;
+
+            state.lastSettings = {
+                selectedCategory:
+                    state.selectedCategory,
+
+                direction:
+                    state.direction,
+
+                size:
+                    state.size
+            };
+
+            if (state.reviewPool) {
+                getElement(
+                    "sessionTitle"
+                ).textContent =
+                    "Révision des erreurs";
+
+            } else if (
+                state.selectedCategory
+                === "Toutes"
+            ) {
+                getElement(
+                    "sessionTitle"
+                ).textContent =
+                    "Toutes les catégories";
+
+            } else {
+                getElement(
+                    "sessionTitle"
+                ).textContent =
+                    state.selectedCategory;
+            }
+
+            getElement(
+                "counterLabel"
+            ).textContent =
+                infiniteMode
+                ? "Question"
+                : "Carte";
+
+            getElement(
+                "progress"
+            ).classList.toggle(
+                "hidden",
+                infiniteMode
+            );
+
+            getElement(
+                "quitButton"
+            ).textContent =
+                infiniteMode
+                ? "Terminer la session"
+                : "Quitter";
+
+            showScreen(
+                "gameScreen"
+            );
+
+            renderCard();
+        }
+
+
+        /* =====================================================
+           AFFICHAGE D'UNE CARTE
+        ====================================================== */
+
+        function renderCard() {
+            if (
+                state.deck.length === 0
+            ) {
+                finishSession();
+                return;
+            }
+
+            if (isInfiniteMode()) {
+                if (
+                    state.cycleIndex
+                    >= state.deck.length
+                ) {
+                    const previousWordId =
+                        state.current
+                        ? state.current.id
+                        : null;
+
+                    state.deck =
+                        shuffle(
+                            getSelectedPool()
+                        );
+
+                    if (
+                        state.deck.length > 1
+                        && state.deck[0].id
+                        === previousWordId
+                    ) {
+                        [
+                            state.deck[0],
+                            state.deck[1]
+                        ] = [
+                            state.deck[1],
+                            state.deck[0]
+                        ];
+                    }
+
+                    state.cycleIndex = 0;
+                }
+
+                state.current =
+                    state.deck[
+                        state.cycleIndex
+                    ];
+
+            } else {
+                if (
+                    state.index
+                    >= state.deck.length
+                ) {
+                    finishSession();
+                    return;
+                }
+
+                state.current =
+                    state.deck[
+                        state.index
+                    ];
+            }
+
+            state.answered = false;
+
+            const frenchToEnglish =
+                state.direction === "fr-en";
+
+            getElement(
+                "instruction"
+            ).textContent =
+                frenchToEnglish
+                ? "Traduis en anglais"
+                : "Traduis en français";
+
+            getElement(
+                "prompt"
+            ).textContent =
+                frenchToEnglish
+                ? state.current.french
+                : state.current.english;
+
+            getElement(
+                "wordCategory"
+            ).textContent =
+                state.current.category;
+
+            if (isInfiniteMode()) {
+                getElement(
+                    "counter"
+                ).textContent =
+                    String(
+                        state.results.length
+                        + 1
+                    );
+            } else {
+                getElement(
+                    "counter"
+                ).textContent =
+                    (
+                        state.index
+                        + 1
+                    )
+                    + " / "
+                    + state.deck.length;
+            }
+
+            getElement(
+                "score"
+            ).textContent =
+                state.correct;
+
+            getElement(
+                "errorCount"
+            ).textContent =
+                state.errors;
+
+            if (!isInfiniteMode()) {
+                getElement(
+                    "progressBar"
+                ).style.width =
+                    (
+                        state.index
+                        / state.deck.length
+                        * 100
+                    )
+                    + "%";
+            }
+
+            const answerInput =
+                getElement(
+                    "answerInput"
+                );
+
+            answerInput.value = "";
+            answerInput.disabled = false;
+
+            getElement(
+                "validateButton"
+            ).classList.remove(
+                "hidden"
+            );
+
+            getElement(
+                "nextButton"
+            ).classList.add(
+                "hidden"
+            );
+
+            const feedback =
+                getElement(
+                    "feedback"
+                );
+
+            feedback.className =
+                "feedback";
+
+            feedback.textContent = "";
+
+            setTimeout(
+                function() {
+                    answerInput.focus();
+                },
+                50
+            );
+        }
+
+
+        function getExpectedAnswers() {
+            if (
+                state.direction === "fr-en"
+            ) {
+                return (
+                    state.current
+                        .english_answers
+                    || [state.current.english]
+                );
+            }
+
+            return (
+                state.current
+                    .french_answers
+                || [state.current.french]
+            );
+        }
+
+
+        /* =====================================================
+           VÉRIFICATION DE LA RÉPONSE
+        ====================================================== */
+
+        function checkAnswer(event) {
+            event.preventDefault();
+
+            if (state.answered) {
+                return;
+            }
+
+            const answer =
+                getElement(
+                    "answerInput"
+                ).value;
+
+            if (!answer.trim()) {
+                return;
+            }
+
+            const acceptedAnswers =
+                getExpectedAnswers().filter(
+                    function(value) {
+                        return Boolean(value);
+                    }
+                );
+
+            const correct =
+                acceptedAnswers.some(
+                    function(value) {
+                        return (
+                            normalize(value)
+                            === normalize(answer)
+                        );
+                    }
+                );
+
+            state.answered = true;
+
+            if (correct) {
+                state.correct += 1;
+            } else {
+                state.errors += 1;
+
+                state.mistakes.set(
+                    state.current.id,
+                    state.current
+                );
+            }
+
+            state.results.push({
+                id:
+                    state.current.id,
+
+                category:
+                    state.current.category,
+
+                correct:
+                    correct,
+
+                answer:
+                    answer,
+
+                accepted:
+                    [...acceptedAnswers]
+            });
+
+            getElement(
+                "score"
+            ).textContent =
+                state.correct;
+
+            getElement(
+                "errorCount"
+            ).textContent =
+                state.errors;
+
+            getElement(
+                "answerInput"
+            ).disabled =
+                true;
+
+            getElement(
+                "validateButton"
+            ).classList.add(
+                "hidden"
+            );
+
+            getElement(
+                "nextButton"
+            ).classList.remove(
+                "hidden"
+            );
+
+            const feedback =
+                getElement(
+                    "feedback"
+                );
+
+            if (correct) {
+                feedback.className =
+                    "feedback correct";
+
+                feedback.textContent =
+                    "✓ Bonne réponse !";
+
+            } else {
+                feedback.className =
+                    "feedback incorrect";
+
+                feedback.textContent =
+                    "✕ Réponses acceptées : "
+                    + acceptedAnswers.join(
+                        " ou "
+                    );
+            }
+
+            if (!isInfiniteMode()) {
+                getElement(
+                    "progressBar"
+                ).style.width =
+                    (
+                        (
+                            state.index
+                            + 1
+                        )
+                        / state.deck.length
+                        * 100
+                    )
+                    + "%";
+            }
+        }
+
+
+        /* =====================================================
+           CARTE SUIVANTE
+        ====================================================== */
+
+        function nextCard() {
+            if (!state.answered) {
+                return;
+            }
+
+            if (isInfiniteMode()) {
+                state.cycleIndex += 1;
+            } else {
+                state.index += 1;
+            }
+
+            renderCard();
+        }
+
+
+        /* =====================================================
+           FIN ET BILAN
+        ====================================================== */
+
+        function finishSession() {
+            if (
+                state.results.length === 0
+            ) {
+                state.reviewPool = null;
+
+                showScreen(
+                    "homeScreen"
+                );
+
+                return;
+            }
+
+            renderResults();
+
+            showScreen(
+                "resultScreen"
+            );
+        }
+
+
+        function renderResults() {
+            const totalQuestions =
+                state.results.length;
+
+            const successRate =
+                calculatePercent(
+                    state.correct,
+                    totalQuestions
+                );
+
+            const uniqueWords =
+                new Set(
+                    state.results.map(
+                        function(result) {
+                            return result.id;
+                        }
+                    )
+                ).size;
+
+            const resultPercent =
+                getElement(
+                    "resultPercent"
+                );
+
+            resultPercent.textContent =
+                successRate
+                + " %";
+
+            resultPercent.style.color =
+                getResultColor(
+                    successRate
+                );
+
+            let message;
+
+            if (successRate >= 90) {
+                message =
+                    "Excellent résultat !";
+
+            } else if (
+                successRate >= 75
+            ) {
+                message =
+                    "Très bonne session.";
+
+            } else if (
+                successRate >= 50
+            ) {
+                message =
+                    "Bonne base, continue à réviser.";
+
+            } else {
+                message =
+                    "Les erreurs vont t'aider à progresser.";
+            }
+
+            getElement(
+                "resultMessage"
+            ).textContent =
+                message;
+
+            getElement(
+                "resultQuestions"
+            ).textContent =
+                totalQuestions;
+
+            getElement(
+                "resultCorrect"
+            ).textContent =
+                state.correct;
+
+            getElement(
+                "resultErrors"
+            ).textContent =
+                state.errors;
+
+            getElement(
+                "resultUnique"
+            ).textContent =
+                uniqueWords;
+
+            const categoryStatistics = {};
+
+            state.results.forEach(
+                function(result) {
+                    if (
+                        !categoryStatistics[
+                            result.category
+                        ]
+                    ) {
+                        categoryStatistics[
+                            result.category
+                        ] = {
+                            total: 0,
+                            correct: 0
+                        };
+                    }
+
+                    categoryStatistics[
+                        result.category
+                    ].total += 1;
+
+                    if (result.correct) {
+                        categoryStatistics[
+                            result.category
+                        ].correct += 1;
+                    }
+                }
+            );
+
+            const categoryRows =
+                Object.entries(
+                    categoryStatistics
+                )
+                    .map(
+                        function(entry) {
+                            const categoryName =
+                                entry[0];
+
+                            const data =
+                                entry[1];
+
+                            const errors =
+                                data.total
+                                - data.correct;
+
+                            const categoryRate =
+                                calculatePercent(
+                                    data.correct,
+                                    data.total
+                                );
+
+                            return {
+                                name:
+                                    categoryName,
+
+                                total:
+                                    data.total,
+
+                                correct:
+                                    data.correct,
+
+                                errors:
+                                    errors,
+
+                                rate:
+                                    categoryRate
+                            };
+                        }
+                    )
+                    .sort(
+                        function(first, second) {
+                            if (
+                                first.rate
+                                !== second.rate
+                            ) {
+                                return (
+                                    first.rate
+                                    - second.rate
+                                );
+                            }
+
+                            return first.name.localeCompare(
+                                second.name,
+                                "fr"
+                            );
+                        }
+                    );
+
+            getElement(
+                "categoryResults"
+            ).innerHTML =
+                categoryRows.map(
+                    function(row) {
+                        const color =
+                            getResultColor(
+                                row.rate
+                            );
+
+                        const goodAnswerLabel =
+                            row.correct > 1
+                            ? "bonnes réponses"
+                            : "bonne réponse";
+
+                        const errorLabel =
+                            row.errors > 1
+                            ? "erreurs"
+                            : "erreur";
+
+                        return `
+                            <div class="category-result">
+
+                                <div class="category-result-line">
+
+                                    <strong>
+                                        ${escapeHtml(row.name)}
+                                    </strong>
+
+                                    <strong
+                                        style="color: ${color}"
+                                    >
+                                        ${row.rate} %
+                                    </strong>
+
+                                </div>
+
+                                <div class="muted">
+                                    ${row.correct}
+                                    ${goodAnswerLabel}
+                                    sur ${row.total},
+                                    ${row.errors}
+                                    ${errorLabel}
+                                </div>
+
+                                <div class="mini-progress">
+                                    <div
+                                        style="
+                                            width: ${row.rate}%;
+                                            background: ${color};
+                                        "
+                                    ></div>
+                                </div>
+
+                            </div>
+                        `;
+                    }
+                ).join("");
+
+            getElement(
+                "reviewErrorsButton"
+            ).classList.toggle(
+                "hidden",
+                state.mistakes.size === 0
+            );
+        }
+
+
+        /* =====================================================
+           ÉVÉNEMENTS
+        ====================================================== */
+
+        getElement(
+            "startButton"
+        ).addEventListener(
+            "click",
+            function() {
+                state.reviewPool = null;
+                startSession();
+            }
+        );
+
+
+        getElement(
+            "answerForm"
+        ).addEventListener(
+            "submit",
+            checkAnswer
+        );
+
+
+        getElement(
+            "nextButton"
+        ).addEventListener(
+            "click",
+            nextCard
+        );
+
+
+        getElement(
+            "quitButton"
+        ).addEventListener(
+            "click",
+            function() {
+                getElement(
+                    "quitDialog"
+                ).classList.remove(
+                    "hidden"
+                );
+            }
+        );
+
+
+        getElement(
+            "continueButton"
+        ).addEventListener(
+            "click",
+            function() {
+                getElement(
+                    "quitDialog"
+                ).classList.add(
+                    "hidden"
+                );
+            }
+        );
+
+
+        getElement(
+            "confirmQuitButton"
+        ).addEventListener(
+            "click",
+            function() {
+                getElement(
+                    "quitDialog"
+                ).classList.add(
+                    "hidden"
+                );
+
+                finishSession();
+            }
+        );
+
+
+        getElement(
+            "replayButton"
+        ).addEventListener(
+            "click",
+            function() {
+                state.reviewPool = null;
+
+                if (state.lastSettings) {
+                    state.selectedCategory =
+                        state.lastSettings
+                            .selectedCategory;
+
+                    state.direction =
+                        state.lastSettings
+                            .direction;
+
+                    state.size =
+                        state.lastSettings
+                            .size;
+                }
+
+                startSession();
+            }
+        );
+
+
+        getElement(
+            "reviewErrorsButton"
+        ).addEventListener(
+            "click",
+            function() {
+                state.reviewPool = [
+                    ...state.mistakes.values()
+                ];
+
+                startSession();
+            }
+        );
+
+
+        getElement(
+            "homeButton"
+        ).addEventListener(
+            "click",
+            function() {
+                state.reviewPool = null;
+
+                selectChoice(
+                    "directionCards",
+                    "data-direction",
+                    state.direction
+                );
+
+                selectChoice(
+                    "sizeCards",
+                    "data-size",
+                    state.size
+                );
+
+                renderCategoryCards();
+
+                showScreen(
+                    "homeScreen"
+                );
+            }
+        );
+
+
+        /* =====================================================
+           TOUCHE ENTRÉE
+
+           Entrée avant validation :
+           le formulaire valide naturellement la réponse.
+
+           Entrée après validation :
+           passage à la carte suivante.
+        ====================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+                if (
+                    event.key !== "Enter"
+                ) {
+                    return;
+                }
+
+                if (
+                    getElement(
+                        "gameScreen"
+                    ).classList.contains(
+                        "hidden"
+                    )
+                ) {
+                    return;
+                }
+
+                if (
+                    !getElement(
+                        "quitDialog"
+                    ).classList.contains(
+                        "hidden"
+                    )
+                ) {
+                    return;
+                }
+
+                if (state.answered) {
+                    event.preventDefault();
+                    nextCard();
+                }
+            }
+        );
+
+
+        /* =====================================================
+           SERVICE WORKER
+        ====================================================== */
+
+        if (
+            "serviceWorker"
+            in navigator
+        ) {
+            window.addEventListener(
+                "load",
+                function() {
+                    navigator
+                        .serviceWorker
+                        .register(
+                            "./service-worker.js"
+                        )
+                        .catch(
+                            function(error) {
+                                console.error(
+                                    "Erreur Service Worker :",
+                                    error
+                                );
+                            }
+                        );
+                }
+            );
+        }
+
+
+        /* =====================================================
+           DÉMARRAGE
+        ====================================================== */
+
+        loadVocabulary();
+    </script>
+
+</body>
+
+</html>
